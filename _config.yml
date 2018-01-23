@@ -1,0 +1,67 @@
+# Site
+title:              Tech Versus Me
+bio:                'Tech-vs-Me provides detailed comparisons between tech products and services, that enable our readers to make informed choices.'
+description:        "Tech-vs-Me provides detailed comparisons between tech products and services, that enable our readers to make informed choices."
+locale:             en_US
+encoding: utf-8
+timezone: Asia/Kolkata
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://techversus.me" # the base hostname & protocol for your site
+
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    permalink: "/compare/:title/"
+    layout: post
+    description: Tech-vs-Me provides detailed comparisons between tech products and services, that enable our readers to make informed choices.
+    keywords: Tech Versus Me, tech, blog, Tech-vs-Me, tech comparison
+    author: Nirantak Raghav
+
+# Jekyll
+permalink: "/compare/:title/"
+markdown:           kramdown
+highlighter:        rouge
+kramdown:
+  auto_ids:         true
+  footnote_nr:      1
+  entity_output:    as_char
+  toc_levels:       1..6
+  enable_coderay:   false
+mathjax:            true
+sass:
+  sass_dir:         _sass
+  style:            compressed
+
+# Comments
+disqus_shortname:   
+
+# Social
+analytics-id:       ""
+twitter:            NirantakRaghav
+facebook:           
+instagram:          
+github:             nirantak
+
+# personal
+location:           Mumbai, India
+phone:              000-000-0000
+email:              contact@nirantak.com
+
+# Gems
+gems:
+  - jekyll-mentions
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+
+paginate: 6
+paginate_path: "/compare/page:num/"
+
+jekyll-mentions:
+    base_url: https://github.com
+
+# Exclude list
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]
