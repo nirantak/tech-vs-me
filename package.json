@@ -1,0 +1,37 @@
+{
+  "name": "tech-vs-me",
+  "version": "1.0.0",
+  "description": "Tech-vs-Me provides detailed comparisons between tech products and services, that enable our readers to make informed choices.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nirantak/techversus.me.git"
+  },
+  "keywords": [
+    "Tech",
+    "Versus",
+    "tech",
+    "blog",
+    "Tech-vs-Me",
+    "tech",
+    "comparison"
+  ],
+  "author": "Nirantak Raghav",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/nirantak/techversus.me/issues"
+  },
+  "homepage": "https://github.com/nirantak/techversus.me#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0"
+  }
+}

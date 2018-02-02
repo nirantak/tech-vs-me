@@ -16,10 +16,9 @@
         <nav id="nav">
             {% include nav.html %}
             <ul class="icons">
-                <li><a href="https://twitter.com/{{site.twitter}}" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
-                <li><a href="https://facebook.com/{{site.facebook}}" class="icon fa-facebook" rel="nofollow"><span class="label">Facebook</span></a></li>
-                <li><a href="https://instagram.com/{{site.instagram}}" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li>
-                <li><a href="https://github.com/{{site.github}}" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
+                <li><a href="https://twitter.com/{{site.twitter}}" target="_blank" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
+                <li><a href="https://facebook.com/{{site.facebook}}" target="_blank" class="icon fa-facebook" rel="nofollow"><span class="label">Facebook</span></a></li>
+                <li><a href="https://github.com/{{site.github}}" target="_blank" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
             </ul>
         </nav>
         <!-- Main -->
@@ -33,17 +32,14 @@
                 <div class="image main"><img src="{{page.image}}" alt=""></div>
                 <p>{{content}}</p>
             </section>
+             {% if page.comments %}
             <div class="comments-wrapper">
+                <script id="dsq-count-scr" src="//{{ site.disqus_shortname }}.disqus.com/count.js" async></script>
                 <div id="disqus_thread"></div>
                 <script>
-                /**
-                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-                 */
-
                 var disqus_config = function() {
-                    this.page.url = '{{ absolute_url }}{{ page.url }}'; /*Replace PAGE_URL with your page's canonical URL variable*/
-                    this.page.identifier = '{{ page.url }}'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
+                    this.page.url = '{{ absolute_url }}{{ page.url }}';
+                    this.page.identifier = '{{ page.url }}';
                 };
 
                 (function() { /* dont endit below this line */
@@ -58,6 +54,7 @@
                 </script>
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
             </div>
+             {% endif %}
             <!-- /.comments-wrapper -->
             <!-- Footer -->
             <footer>

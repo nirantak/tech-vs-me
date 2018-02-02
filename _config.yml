@@ -5,8 +5,8 @@ description:        "Tech-vs-Me provides detailed comparisons between tech produ
 locale:             en_US
 encoding: utf-8
 timezone: Asia/Kolkata
-baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://techversus.me" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
 
 defaults:
 - scope:
@@ -35,13 +35,12 @@ sass:
   style:            compressed
 
 # Comments
-disqus_shortname:   
+disqus_shortname:   "tech-vs-me"
 
 # Social
-analytics-id:       ""
+analytics-id:       "UA-105821168-2"
 twitter:            NirantakRaghav
 facebook:           
-instagram:          
 github:             nirantak
 
 # personal
@@ -50,7 +49,7 @@ phone:              000-000-0000
 email:              contact@nirantak.com
 
 # Gems
-gems:
+plugins:
   - jekyll-mentions
   - jekyll-sitemap
   - jekyll-feed
