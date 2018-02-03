@@ -7,6 +7,7 @@ keywords: apple, airpods, google, pixel buds, compare earphones, earphones
 author: Priyank Jethva
 excerpt: "A detailed comparison between Apple Airpods and Google Pixel Buds"
 image: "/images/pexels-photo-374866.jpeg"
+tags: hardware earphones
 comments: true
 ---
 

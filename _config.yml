@@ -1,7 +1,7 @@
 # Site
 title:              Tech Versus Me
-bio:                'Tech-vs-Me provides detailed comparisons between tech products and services, that enable our readers to make informed choices.'
-description:        "Tech-vs-Me provides detailed comparisons between tech products and services, that enable our readers to make informed choices."
+bio:                'We provide detailed comparisons between tech products and services, that enable our readers to make informed choices.'
+description:        "We provide detailed comparisons between tech products and services, that enable our readers to make informed choices."
 locale:             en_US
 encoding: utf-8
 timezone: Asia/Kolkata
@@ -15,8 +15,8 @@ defaults:
   values:
     permalink: "/compare/:title/"
     layout: post
-    description: Tech-vs-Me provides detailed comparisons between tech products and services, that enable our readers to make informed choices.
-    keywords: Tech Versus Me, tech, blog, Tech-vs-Me, tech comparison
+    description: We provide detailed comparisons between tech products and services, that enable our readers to make informed choices.
+    keywords: Tech Versus Me, tech, blog, tech vs me, Tech-vs-Me, tech comparison, compare
     author: Nirantak Raghav
 
 # Jekyll
@@ -35,17 +35,17 @@ sass:
   style:            compressed
 
 # Comments
-disqus_shortname:   "tech-vs-me"
+disqus_shortname:   tech-vs-me
 
 # Social
-analytics-id:       "UA-105821168-2"
+analytics-id:       UA-105821168-2
 twitter:            NirantakRaghav
 facebook:           
 github:             nirantak
 
 # personal
 location:           Mumbai, India
-phone:              000-000-0000
+phone:              
 email:              contact@nirantak.com
 
 # Gems
@@ -63,4 +63,4 @@ jekyll-mentions:
     base_url: https://github.com
 
 # Exclude list
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, package-lock.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old, assets/icon/favicon_package.zip]

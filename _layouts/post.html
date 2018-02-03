@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
 <head>
     {% include head.html %}
@@ -34,23 +34,20 @@
             </section>
              {% if page.comments %}
             <div class="comments-wrapper">
-                <script id="dsq-count-scr" src="//{{ site.disqus_shortname }}.disqus.com/count.js" async></script>
                 <div id="disqus_thread"></div>
                 <script>
-                var disqus_config = function() {
-                    this.page.url = '{{ absolute_url }}{{ page.url }}';
-                    this.page.identifier = '{{ page.url }}';
-                };
+                    var disqus_config = function() {
+                        this.page.url = '{{ page.url | absolute_url}}';
+                        this.page.identifier = '{{ page.url }}';
+                    };
 
-                (function() { /* dont endit below this line */
-                    var d = document,
-                        s = d.createElement('script');
-
-                    s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
-
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
+                    (function() { /* dont endit below this line */
+                        var d = document,
+                            s = d.createElement('script');
+                        s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
                 </script>
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
             </div>
@@ -68,6 +65,7 @@
     </div>
     <!-- Scripts -->
     {% include scripts-main.html %} {% include tracking.html %}
+    <script id="dsq-count-scr" src="//{{ site.disqus_shortname }}.disqus.com/count.js" async></script>
 </body>
 
 </html>
