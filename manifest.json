@@ -48,7 +48,7 @@
 			"type": "image/png"
 		},
 		{
-			"src": "/android-chrome-384x384.png",
+			"src": "/assets/icon/android-chrome-384x384.png",
 			"sizes": "384x384",
 			"type": "image/png"
 		},
