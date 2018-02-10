@@ -1,16 +1,17 @@
-const gulp = require("gulp");
-const uglify = require("gulp-uglify");
-const sass = require("gulp-sass");
-const autoprefixer = require("gulp-autoprefixer");
-const cleancss = require("gulp-clean-css");
-const concat = require("gulp-concat");
-const rename = require("gulp-rename");
-const htmlmin = require("gulp-htmlmin");
-const imagemin = require("gulp-imagemin");
+const gulp = require('gulp');
+const uglify = require('gulp-uglify');
+// const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const cleancss = require('gulp-clean-css');
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+// const htmlmin = require('gulp-htmlmin');
+const imagemin = require('gulp-imagemin');
+const ghPages = require('gulp-gh-pages');
 
 const sass_Options = {
 	errLogToConsole: true,
-	outputStyle: "compressed"
+	outputStyle: 'compressed'
 };
 const cleancss_Options = {
 	debug: true
@@ -31,72 +32,81 @@ const imagemin_Options = {
 };
 
 //Optimize Images
-gulp.task("img-min", function() {
+gulp.task('img-min', function() {
 	return gulp
-		.src("src/img/*")
+		.src('src/img/*')
 		.pipe(imagemin(imagemin_Plugins, imagemin_Options))
-		.pipe(gulp.dest("images/"));
+		.pipe(gulp.dest('images/'));
 });
 
 // Minify CSS
-gulp.task("minify-css", function() {
+gulp.task('minify-css', function() {
 	return gulp
-		.src("src/css/main.css")
+		.src('src/css/main.css')
 		.pipe(cleancss(cleancss_Options))
-		.pipe(rename({ suffix: ".min" }))
-		.pipe(gulp.dest("assets/css/"));
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(gulp.dest('assets/css/'));
 });
 
 // Merge CSS files
-gulp.task("merge-css", function() {
+gulp.task('merge-css', function() {
 	return gulp
-		.src(["assets/css/theme.min.css", "assets/css/main.min.css"])
-		.pipe(concat("styles.css", { newLine: ";" }))
-		.pipe(gulp.dest("assets/css/"));
+		.src(['assets/css/theme.min.css', 'assets/css/main.min.css'])
+		.pipe(concat('styles.css', { newLine: ';' }))
+		.pipe(gulp.dest('assets/css/'));
 });
 
 // Uglify JS
-gulp.task("uglify-js", function() {
+gulp.task('uglify-js', function() {
 	return gulp
-	.src("src/js/main.js")
-	.pipe(uglify().on("error", function(e) {
+	.src('src/js/main.js')
+	.pipe(uglify().on('error', function(e) {
 		console.log(e);
 	}))
-	.pipe(rename({ suffix: ".min" }))
-	.pipe(gulp.dest("assets/js/"));
+	.pipe(rename({ suffix: '.min' }))
+	.pipe(gulp.dest('assets/js/'));
+});
+
+gulp.task('uglify-js2', function () {
+	return gulp
+		.src('src/js/service-worker.js')
+		.pipe(uglify().on('error', function (e) {
+			console.log(e);
+		}))
+		.pipe(gulp.dest('./'));
 });
 
 // Merge JS files
-gulp.task("merge-js", function() {
+gulp.task('merge-js', function() {
 	return gulp
 	.src([
-		"assets/js/jquery.scrollex.min.js",
-		"assets/js/jquery.scrolly.min.js",
-		"assets/js/skel.min.js",
-		"assets/js/util.min.js",
-		"assets/js/theme.min.js",
-		"assets/js/main.min.js"
+		'assets/js/jquery.scrollex.min.js',
+		'assets/js/jquery.scrolly.min.js',
+		'assets/js/skel.min.js',
+		'assets/js/util.min.js',
+		'assets/js/theme.min.js',
+		'assets/js/main.min.js'
 	])
-	.pipe(concat("scripts.js", { newLine: ";" }))
-	.pipe(gulp.dest("assets/js/"));
+	.pipe(concat('scripts.js', { newLine: ';' }))
+	.pipe(gulp.dest('assets/js/'));
 });
 
-// gulp.task("minify-html", function() {
-// 	return gulp
-// 		.src("src/*.html")
-// 		.pipe(htmlmin(htmlmin_Options))
-// 		.pipe(gulp.dest("dist"));
-// });
+gulp.task('img', gulp.series('img-min'));
+gulp.task('css', gulp.series('minify-css', 'merge-css'));
+gulp.task('js', gulp.series(gulp.parallel('uglify-js', 'uglify-js2'), 'merge-js'));
 
-gulp.task("img", ["img-min"]);
-gulp.task("css", ["minify-css", "merge-css"]);
-gulp.task("js", ["uglify-js", "merge-js"]);
-gulp.task("default", ["minify-css", "uglify-js", "img-min", "merge-css", "merge-js"]);
+gulp.task('default', gulp.series(gulp.parallel('img-min', 'minify-css', 'uglify-js', 'uglify-js2'), gulp.parallel('merge-css', 'merge-js')));
 
-gulp.task("watch", function() {
-	gulp.watch("src/css/main.css", ["minify-css"]);
-	gulp.watch("assets/css/*.css", ["merge-css"]);
-	gulp.watch("src/js/main.js", ["uglify-js"]);
-	gulp.watch("assets/js/*.js", ["merge-js"]);
-	gulp.watch("src/img/*", ["img-min"]);
+// Deply _site subdir to branch gh-pages
+gulp.task('deploy', gulp.series('default', function () {
+	return gulp.src('_site/**/*')
+		.pipe($.ghPages());
+}));
+
+gulp.task('watch', function() {
+	gulp.watch('src/css/main.css', ['minify-css']);
+	gulp.watch('assets/css/*.css', ['merge-css']);
+	gulp.watch('src/js/main.js', ['uglify-js']);
+	gulp.watch('assets/js/*.js', ['merge-js']);
+	gulp.watch('src/img/*', ['img-min']);
 });

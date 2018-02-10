@@ -1,25 +1,53 @@
 ---
-layout: null
+layout: compress
 title: "404 - Page Not Found"
 permalink: /404.html
 ---
+
 <!DOCTYPE HTML>
 <html lang="en">
 
 <head>
     {% include head.html %}
+    <style>
+        .main {
+            margin: auto;
+        }
+    
+        .container {
+            margin: auto;
+        }
+    
+        img {
+            height: 20%;
+            width: auto;
+            margin: auto;
+        }
+    
+        .container {
+            text-align: center;
+        }
+    
+        p {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <div id="main">
-        <section class="error-details">
-            <img alt="404 Error" class="error-ghost" src="{{ "/images/404.png" | absolute_url }}" />
-            <section class="error-message">
-                <h1 class="error-code">404</h1>
-                <h2 class="error-description">Page not found</h2>
-                <a class="error-link" href="{{ "/" | absolute_url }}">Go to the home page →</a>
-            </section>
-        </section>
+        <div id="main">
+            <div class="container">
+                <div>
+                    <img src="{{ "/images/404.png" | absolute_url }}" />
+                    <h1>404</h1>
+                    <h2>Page not found</h2>
+                    <p>
+                        <a href="/">Return Home →</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     {% include foot.html %}
     <!-- Scripts -->

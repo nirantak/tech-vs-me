@@ -13,14 +13,14 @@ defaults:
     path: ''
     type: posts
   values:
-    permalink: "/compare/:title/"
+    permalink: /:categories/:title/
     layout: post
     description: We provide detailed comparisons between tech products and services, that enable our readers to make informed choices.
     keywords: Tech Versus Me, tech, blog, tech vs me, Tech-vs-Me, tech comparison, compare
     author: Nirantak Raghav
 
 # Jekyll
-permalink: "/compare/:title/"
+permalink: /:categories/:title/
 markdown:           kramdown
 highlighter:        rouge
 kramdown:
@@ -57,7 +57,7 @@ plugins:
   - jekyll-paginate
 
 paginate: 6
-paginate_path: "/compare/page:num/"
+paginate_path: "/:categories/page:num/"
 
 jekyll-mentions:
     base_url: https://github.com

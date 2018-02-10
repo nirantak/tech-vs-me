@@ -4,7 +4,8 @@
   "description": "Tech-vs-Me provides detailed comparisons between tech products and services, that enable our readers to make informed choices.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "bundle exec jekyll serve",
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
@@ -26,10 +27,11 @@
   },
   "homepage": "https://github.com/nirantak/techversus.me#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-clean-css": "^3.9.2",
     "gulp-concat": "^2.6.1",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-htmlmin": "^4.0.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-rename": "^1.2.2",

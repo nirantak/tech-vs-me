@@ -1,13 +1,15 @@
 ---
 layout: post
-title:  "Apple Airpods vs Google Pixel Buds"
-date:   2018-01-24
+title: "Apple Airpods vs Google Pixel Buds"
+date: 2018-01-24
+last_modified_at: 2018-02-11
 description: "A detailed comparison between Apple Airpods and Google Pixel Buds"
 keywords: apple, airpods, google, pixel buds, compare earphones, earphones
-author: Priyank Jethva
+author: priyank
 excerpt: "A detailed comparison between Apple Airpods and Google Pixel Buds"
 image: "/images/pexels-photo-374866.jpeg"
-tags: hardware earphones
+categories: hardware
+tags: earphones music
 comments: true
 ---
 
@@ -25,8 +27,8 @@ comments: true
 | Audio formats | MP3, AAC, & SBC codec when streaming | MP3, M4A, AAC, WAV, WMA(v9) |
 | Compatibility | iPhone 5 and later, iPad mini 2+, iPad Air+, iPad Pro, iPod Touch (6th gen) (iOS 10+); Apple Watch (WatchOS 3+); MacOS Sierra or later | Android devices (Android 5.0+), Apple devices (iOS 10+); |
 | Waterproofing | No | No |
-| Price | [$159](https://www.amazon.com/Apple-Airpods-Wireless-Bluetooth-Headset/dp/B01MQWUXZS) | [$159](https://www.amazon.com/Google-Pixel-Buds-Just-Black/dp/B00JEX3V46) |
-| Available from | [Apple](https://www.apple.com/airpods/) | [Google](https://store.google.com/us/product/google_pixel_buds?hl=en-US) |
+| Price | [$159](https://www.amazon.com/Apple-Airpods-Wireless-Bluetooth-Headset/dp/B01MQWUXZS){:target="_blank"} | [$159](https://www.amazon.com/Google-Pixel-Buds-Just-Black/dp/B00JEX3V46){:target="_blank"} |
+| Available from | [Apple](https://www.apple.com/airpods/){:target="_blank"} | [Google](https://store.google.com/us/product/google_pixel_buds?hl=en-US){:target="_blank"} |
 |---
 
 ## Detailed Comparison
@@ -70,8 +72,8 @@ The Pixel Buds offer inoffensive audio quality, impressive Google Assistant inte
 
 ### Links
 
-* [Apple Airpods](https://www.apple.com/airpods/)
-* [Flipkart - Apple Airpods](https://www.flipkart.com/apple-airpods-wireless-headset-mic/p/itmemrtsnjnd7sb2)
-* [Amazon - Apple Airpods](https://www.amazon.com/Apple-Airpods-Wireless-Bluetooth-Headset/dp/B01MQWUXZS)
-* [Google Pixelbuds](https://store.google.com/us/product/google_pixel_buds?hl=en-US)
-* [Amazon - Google Pixelbuds](https://www.amazon.com/Google-Pixel-Buds-Just-Black/dp/B00JEX3V46)
+* [Apple Airpods](https://www.apple.com/airpods/){:target="_blank"}
+* [Flipkart - Apple Airpods](https://www.flipkart.com/apple-airpods-wireless-headset-mic/p/itmemrtsnjnd7sb2){:target="_blank"}
+* [Amazon - Apple Airpods](https://www.amazon.com/Apple-Airpods-Wireless-Bluetooth-Headset/dp/B01MQWUXZS){:target="_blank"}
+* [Google Pixelbuds](https://store.google.com/us/product/google_pixel_buds?hl=en-US){:target="_blank"}
+* [Amazon - Google Pixelbuds](https://www.amazon.com/Google-Pixel-Buds-Just-Black/dp/B00JEX3V46){:target="_blank"}

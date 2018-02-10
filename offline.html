@@ -1,0 +1,48 @@
+---
+layout: compress
+title: "You are not connected to the Internet!"
+description: "Looks like you've lost your Internet connection"
+permalink: /offline.html
+---
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    {% include head.html %}
+    <style>
+        .main {
+            margin: auto;
+        }
+        .container {
+            margin: auto;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin: auto;
+        }
+        .container {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="container">
+            <div>
+                <img class="wires" src="{{ "/images/offline.png" | absolute_url }}" />
+                <h1>It looks like you've lost your Internet connection.</h1>
+                <p>
+                    <a href="/">Return Home →</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% include tracking.html %}
+</body>
+
+</html>

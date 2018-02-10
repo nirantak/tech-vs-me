@@ -1,3 +1,7 @@
+---
+layout: compress
+---
+
 <!DOCTYPE HTML>
 <html lang="en">
 
@@ -30,6 +34,19 @@
                     <p>{{page.excerpt}}</p>
                 </header>
                 <div class="image main"><img src="{{page.image}}" alt=""></div>
+                <div class="post-categories">
+                    {% if post %} {% assign categories = post.categories %} {% else %} {% assign categories = page.categories %} {% endif %}
+                    Category: 
+                    {% for category in categories %}
+                    <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category | capitalize}}</a>
+                    {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
+                </div>
+                <div class="post-tags">
+                    {% if post %} {% assign tags = post.tags %} {% else %} {% assign tags = page.tags %} {% endif %} Tags: {% for tag in tags
+                    %}
+                    <a href="">{{tag | capitalize}}</a>
+                    {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
+                </div>
                 <p>{{content}}</p>
             </section>
              {% if page.comments %}
@@ -41,7 +58,7 @@
                         this.page.identifier = '{{ page.url }}';
                     };
 
-                    (function() { /* dont endit below this line */
+                    (function() { /* don't edit below this line */
                         var d = document,
                             s = d.createElement('script');
                         s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
@@ -56,7 +73,7 @@
             <!-- Footer -->
             <footer>
                 <ul class="actions">
-                    <li><a href="{{ "/compare/" | absolute_url }}" class="button">Tech Comparisons</a></li>
+                    <li><a href="{{ "/all/" | absolute_url }}" class="button">Tech Comparisons</a></li>
                 </ul>
             </footer>
         </div>

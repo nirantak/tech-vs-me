@@ -1,3 +1,7 @@
+---
+layout: compress
+---
+
 <!DOCTYPE HTML>
 <html lang="en">
 
@@ -35,8 +39,20 @@
                         <span class="date">{{ post.date | date_to_string }}</span>
                         <h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</h2>
                     </header>
-                    <a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
+                    <a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="{{ post.title }}" /></a>
                     <p>{{ post.excerpt }}</p>
+                    <div class="post-categories">
+                        {% if post %} {% assign categories = post.categories %} {% else %} {% assign categories = page.categories %} {% endif %}
+                        Category: {% for category in categories %}
+                        <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category | capitalize}}</a>
+                        {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
+                    </div>
+                    <div class="post-tags">
+                        {% if post %} {% assign tags = post.tags %} {% else %} {% assign tags = page.tags %} {% endif %}
+                        Tags: {% for tag in tags %}
+                        <a href="">{{tag | capitalize}}</a>
+                        {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
+                    </div>
                     <ul class="actions">
                         <li><a href="{{ post.url | absolute_url }}" class="button">Read</a></li>
                     </ul>
