@@ -104,9 +104,8 @@ gulp.task('deploy', gulp.series('default', function () {
 }));
 
 gulp.task('watch', function() {
-	gulp.watch('src/css/main.css', ['minify-css']);
-	gulp.watch('assets/css/*.css', ['merge-css']);
-	gulp.watch('src/js/main.js', ['uglify-js']);
-	gulp.watch('assets/js/*.js', ['merge-js']);
-	gulp.watch('src/img/*', ['img-min']);
+	gulp.watch('src/css/main.css', gulp.series('minify-css', 'merge-css'));
+	gulp.watch('src/js/main.js', gulp.series('uglify-js', 'merge-js'));
+	gulp.watch('src/js/service-worker.js', gulp.series('uglify-js2', 'merge-js'));
+	gulp.watch('src/img/*', gulp.parallel('img-min'));
 });

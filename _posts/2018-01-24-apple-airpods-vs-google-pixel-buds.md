@@ -15,6 +15,8 @@ comments: true
 
 ## Overview
 
+<div style="overflow-x:auto;" markdown="1">
+
 |---
 | Specifications | Apple Airpods | Google Pixel Buds |
 | ---------- | ---------- | ---------- |
@@ -30,6 +32,8 @@ comments: true
 | Price | [$159](https://www.amazon.com/Apple-Airpods-Wireless-Bluetooth-Headset/dp/B01MQWUXZS){:target="_blank"} | [$159](https://www.amazon.com/Google-Pixel-Buds-Just-Black/dp/B00JEX3V46){:target="_blank"} |
 | Available from | [Apple](https://www.apple.com/airpods/){:target="_blank"} | [Google](https://store.google.com/us/product/google_pixel_buds?hl=en-US){:target="_blank"} |
 |---
+
+</div>
 
 ## Detailed Comparison
 

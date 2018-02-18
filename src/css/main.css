@@ -2,6 +2,10 @@ img {
     max-width: 720px;
 }
 
+table {
+    width: 100%;
+}
+
 .error-details {
     display: -webkit-flex;
     display: -ms-flexbox;

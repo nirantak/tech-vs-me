@@ -7,6 +7,7 @@ encoding: utf-8
 timezone: Asia/Kolkata
 url: "https://techversus.me" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
+api_url: "https://api.techversus.me"
 
 defaults:
 - scope:
@@ -57,7 +58,7 @@ plugins:
   - jekyll-paginate
 
 paginate: 6
-paginate_path: "/:categories/page:num/"
+paginate_path: "/all/page:num/"
 
 jekyll-mentions:
     base_url: https://github.com
