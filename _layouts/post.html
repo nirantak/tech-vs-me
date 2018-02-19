@@ -49,6 +49,10 @@ layout: compress
                     <a href="">{{tag | capitalize}}</a>
                     {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
                 </div>
+                <div class="post-author">
+                    Author: 
+                    <a href="{{site.data.authors[page.author].web}}" target="_blank">{{site.data.authors[page.author].name}}</a>
+                </div>
                 <p>{{content}}</p>
             </section>
              {% if page.comments %}

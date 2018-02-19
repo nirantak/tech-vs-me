@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Apple Airpods vs Google Pixel Buds"
-date: 2018-01-24
+date: 2018-01-24 10:00:00 +05:30
 last_modified_at: 2018-02-11
 description: "A detailed comparison between Apple Airpods and Google Pixel Buds"
 keywords: apple, airpods, google, pixel buds, compare earphones, earphones
 author: priyank
 excerpt: "A detailed comparison between Apple Airpods and Google Pixel Buds"
-image: "/images/pexels-photo-374866.jpeg"
+image: "/images/airpods-vs-pixelbuds.jpeg"
 categories: hardware
 tags: earphones music
 comments: true

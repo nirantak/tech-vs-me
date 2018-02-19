@@ -55,6 +55,10 @@ layout: compress
                         <a href="">{{tag | capitalize}}</a>
                         {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
                     </div>
+                    <div class="post-author">
+                        Author: 
+                        <a href="{{site.data.authors[post.author].web}}"  target="_blank">{{site.data.authors[post.author].name}}</a>
+                    </div>
                     <ul class="actions">
                         <li><a href="{{ post.url | absolute_url }}" class="button">Read</a></li>
                     </ul>

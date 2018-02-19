@@ -1,6 +1,6 @@
 // Service Worker
 
-var CACHE_VERSION = 1.5;
+var CACHE_VERSION = 1.7;
 var CACHE_NAME = 'tvm-offline-v' + CACHE_VERSION;
 var OFFLINE_URL = '/offline.html';
 
@@ -18,6 +18,8 @@ var CACHE_FILES = [
 	'/all/index.html',
 	'/categories/',
 	'/categories/index.html',
+	'/services/heroku-vs-pythonanywhere/',
+	'/hardware/iphone-x-vs-pixel-2-xl/',
 	'/hardware/apple-airpods-vs-google-pixel-buds/',
 	'/assets/css/styles.css',
 	'/assets/css/noscript.min.css',
