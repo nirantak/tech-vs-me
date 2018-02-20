@@ -8,3 +8,5 @@ if ('serviceWorker' in navigator) {
 			.then(function () { console.log('Service Worker Registered'); });
 	});
 }
+
+$("#gcse").html("<gcse:search></gcse:search>");
