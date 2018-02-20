@@ -36,18 +36,13 @@ permalink: /404.html
 
 <body>
     <div id="main">
-        <div id="main">
-            <div class="container">
-                <div>
-                    <img src="{{ "/images/404.png" | absolute_url }}" />
-                    <h1>404</h1>
-                    <h2>Page not found</h2>
-                    <p>
-                        <a href="/">Return Home →</a>
-                    </p>
-                </div>
-            </div>
+        <div class="container">
+            <img src="{{ "/images/404.png" | absolute_url }}" />
+            <h1>404</h1>
+            <h2>Page not found</h2>
+            <p><a href="/">Return Home →</a></p>
         </div>
+        <section class="google-cse">{% include google-cse.html %}</section>
     </div>
     {% include foot.html %}
     <!-- Scripts -->
