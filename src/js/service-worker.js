@@ -1,6 +1,6 @@
 // Service Worker
 
-var CACHE_VERSION = 1.9;
+var CACHE_VERSION = 1.10;
 var CACHE_NAME = 'tvm-offline-v' + CACHE_VERSION;
 var OFFLINE_URL = '/offline.html';
 
@@ -10,7 +10,6 @@ var CACHE_FILES = [
 	"/index.html?utm_source=pwa",
 	"/404.html",
 	"/offline.html",
-	"/privacy.html",
 	"/favicon.ico",
 	"/about/",
 	"/all/",
@@ -25,9 +24,6 @@ var CACHE_FILES = [
 	"/images/offline.png",
 	"/images/bg.jpg",
 	"/images/overlay.png",
-	"/images/tech-versus-me.png",
-	"/images/cup-mug-desk-office.jpg",
-	"/images/pexels-photo-267350.jpeg",
 	"/images/pexels-photo-325153.jpeg",
 	"/assets/css/font-awesome.min.css",
 	"/assets/fonts/fontawesome-webfont.eot",
@@ -43,7 +39,6 @@ var CACHE_FILES = [
 	"/assets/fonts/fontawesome-webfont.woff2?v=4.7.0",
 	"/assets/fonts/FontAwesome.otf",
 	"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js",
-	"https://www.google-analytics.com/analytics.js",
 	"https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900"
 ];
 

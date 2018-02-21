@@ -17,17 +17,19 @@ title : Sitemap
     </url>
     {% endfor %}
     {% for page in site.pages %}
-    <url>
-        <loc>{{ site.url }}{{ page.url }}</loc>
-        {% if page.sitemap.lastmod == null %} <lastmod>2017-11-10T00:20:35+00:00</lastmod>
-        {% else %} <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+        {% if page.sitemap != false %}
+        <url>
+            <loc>{{ site.url }}{{ page.url }}</loc>
+            {% if page.sitemap.lastmod == null %} <lastmod>2017-11-10T00:20:35+00:00</lastmod>
+            {% else %} <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+            {% endif %}
+            {% if page.sitemap.changefreq == null %} <changefreq>weekly</changefreq>
+            {% else %} <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+            {% endif %}
+            {% if page.sitemap.priority == null %} <priority>0.5</priority>
+            {% else %} <priority>{{ page.sitemap.priority }}</priority>
+            {% endif %}
+        </url>
         {% endif %}
-        {% if page.sitemap.changefreq == null %} <changefreq>weekly</changefreq>
-        {% else %} <changefreq>{{ page.sitemap.changefreq }}</changefreq>
-        {% endif %}
-        {% if page.sitemap.priority == null %} <priority>0.5</priority>
-        {% else %} <priority>{{ page.sitemap.priority }}</priority>
-        {% endif %}
-    </url>
     {% endfor %}
 </urlset>

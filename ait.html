@@ -1,0 +1,179 @@
+---
+layout: compress
+title: "AIT Practicals"
+permalink: /ait
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>AIT Practicals</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		div#transit1 {
+			width: 100px;
+			height: 100px;
+			background: #138D75;
+			border-radius: 20px;
+			-webkit-transition: width 3s; /* Safari */
+			-webkit-transition-delay: 1s; /* Safari */
+			transition: width 3s;
+			transition-delay: 0.5s;
+		}
+
+		div#transit1:hover {
+			width: 60%;
+		}
+
+		div#transit1:hover:after {
+			content: "Mouse Detected";
+			padding-left: 20px;
+			transition: all 2s;
+		}
+
+		div#anim1 {
+			width: 100px;
+			height: 100px;
+			background: #EC7063;
+			border-radius: 20px;
+			position: relative;
+			animation: jump 3s infinite;
+		}
+
+		@keyframes jump {
+			0%   {top: 0px; left: 0px}
+			25%  {top:0px; left: 500px;}
+			50%  {top: 500px; left: 500px}
+			75% {top:500px; left: 0px;}
+			100% {top:0px; left: 0px;}
+		}
+
+		@keyframes warning {
+			0% {
+				text-shadow: 0px 0px 4px #000000;
+			}
+			50% {
+				text-shadow: 0 0 20px #000000;
+			}
+			100% {
+				text-shadow: 0px 0px 4px #000000;
+			}
+		}
+
+		div.transf {
+			width: 100px;
+			height: 100px;
+			background: #2980B9;
+			border-radius: 20px;
+		}
+		div#transf1:hover {
+			transform: rotate(45deg);
+		}
+		div#transf2:hover {
+			transform: skew(45deg);
+		}
+		div#transf3:hover {
+			transform: scale(0.5,0.5);
+		}
+		div#transf4:hover {
+			transform: translate(10px,-50px);
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">AIT</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="/">Home</a>
+				<li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						HTML5
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#video">Video</a>
+						<a class="dropdown-item" href="#audio">Audio</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						CSS3
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#transition">Transition</a>
+						<a class="dropdown-item" href="#animation">Animation</a>
+						<a class="dropdown-item" href="#transformation">Transformation</a>
+						<a class="dropdown-item" href="#at">Animation + Transformation</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row pb-5 pt-5">
+			<h1>AIT Practicals</h1>
+		</div>
+		<div class="row pb-5" id="video">
+			<h3>HTML5 Video Tag</h3>
+			<div class="w-100"></div>
+			<video width="480" height="360" controls poster="ait_media/iPhone_X_overview.jpg">
+				<source src="ait_media/iPhone_X_overview.webm" type="video/webm">
+				<source src="ait_media/iPhone_X_overview.mp4" type="video/mp4">
+				<source src="ait_media/iPhone_X_overview.ogv" type="video/ogv">
+				Your browser does not support the video tag.
+			</video>
+		</div>
+		<div class="row pb-5" id="audio">
+			<h3>HTML5 Audio Tag</h3>
+			<div class="w-100"></div>
+			<audio controls>
+				<source src="ait_media/Night_Owl.ogg" type="audio/ogg">
+				<source src="ait_media/Night_Owl.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+			</audio>
+		</div>
+		<div class="row pb-5" id="transition">
+			<h3>CSS3 Transitions</h3>
+			<div class="w-100"></div>
+			<div id="transit1"></div>
+		</div>
+		<div class="row pb-5" id="animation">
+			<h3>CSS3 Animation</h3>
+			<div class="w-100"></div>
+			<div id="anim1"></div>
+		</div>
+		<div class="row pb-5" id="transformation">
+			<h3>CSS3 Transformation</h3>
+			<div class="w-100"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col"><div class="transf" id="transf1">&emsp;Rotate</div></div>
+					<div class="col"><div class="transf" id="transf2">&emsp;Skew</div></div>
+					<div class="col"><div class="transf" id="transf3">&emsp;Scale</div></div>
+					<div class="col"><div class="transf" id="transf4">&emsp;Translate</div></div>
+				</div>
+			</div>
+		</div>
+		<div class="row pb-5" id="animation">
+			<h3>Animation + Transformation</h3>
+			<div class="w-100"></div>
+			<div id="at"></div>
+		</div>
+	</div>
+
+	<div style="padding-top: 400px;"></div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
