@@ -1,6 +1,6 @@
 // Service Worker
 
-var CACHE_VERSION = 1.10;
+var CACHE_VERSION = 1.11;
 var CACHE_NAME = 'tvm-offline-v' + CACHE_VERSION;
 var OFFLINE_URL = '/offline.html';
 
@@ -11,6 +11,7 @@ var CACHE_FILES = [
 	"/404.html",
 	"/offline.html",
 	"/favicon.ico",
+	"/search.json",
 	"/about/",
 	"/all/",
 	"/categories/",
