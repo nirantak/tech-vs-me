@@ -1,6 +1,7 @@
 <ul class="links">
-    <li class="{% if page.url == "/" %} active {% endif %}"><a href="{{ "/" | absolute_url }}">Home</a></li>
-    <li class="{% if page.url contains '/about/' %} active {% endif %}"><a href="{{ "/about/" | absolute_url }}">About</a></li>
-    <li class="{% if page.url contains '/all/' %} active {% endif %}"><a href="{{ "/all/" | absolute_url }}">Comparisons</a></li>
-    <li class="{% if page.url contains '/categories/' %} active {% endif %}"><a href="{{ "/categories/" | absolute_url }}">Categories</a></li>
+    <li class="{% if page.url == "/" %} active {% endif %}"><a href="{{ "/" | absolute_url }}"><i class="icon fa-home" aria-hidden="true"></i> Home</a></li>
+    <li class="{% if page.url contains '/about/' %} active {% endif %}"><a href="{{ "/about/" | absolute_url }}"><i class="icon fa-user" aria-hidden="true"></i> About</a></li>
+    <li class="{% if page.url contains '/all/' %} active {% endif %}"><a href="{{ "/all/" | absolute_url }}"><i class="icon fa-list" aria-hidden="true"></i> Comparisons</a></li>
+    <li class="{% if page.url contains '/categories/' %} active {% endif %}"><a href="{{ "/categories/" | absolute_url }}"><i class="icon fa-tags" aria-hidden="true"></i> Categories</a></li>
+    <li><a href="#search-btn" id="search-btn" title="Search for articles"><i class="icon fa-search" aria-hidden="true"></i> Search</a></li>
 </ul>

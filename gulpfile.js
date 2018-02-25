@@ -51,9 +51,12 @@ gulp.task('minify-css', function() {
 // Merge CSS files
 gulp.task('merge-css', function() {
 	return gulp
-		.src(['assets/css/theme.min.css', 'assets/css/main.min.css'])
-		.pipe(concat('styles.css', { newLine: ';' }))
-		.pipe(gulp.dest('assets/css/'));
+		.src([
+			"assets/css/theme.min.css",
+			"assets/css/main.min.css"
+		])
+		.pipe(concat("styles.css", { newLine: ";" }))
+		.pipe(gulp.dest("assets/css/"));
 });
 
 // Uglify JS
@@ -79,16 +82,18 @@ gulp.task('uglify-js2', function () {
 // Merge JS files
 gulp.task('merge-js', function() {
 	return gulp
-	.src([
-		'assets/js/jquery.scrollex.min.js',
-		'assets/js/jquery.scrolly.min.js',
-		'assets/js/skel.min.js',
-		'assets/js/util.min.js',
-		'assets/js/theme.min.js',
-		'assets/js/main.min.js'
-	])
-	.pipe(concat('scripts.js', { newLine: ';' }))
-	.pipe(gulp.dest('assets/js/'));
+		.src([
+			"assets/js/bootstrap.min.js",
+			"assets/js/bs3-typeahead.min.js",
+			"assets/js/jquery.scrollex.min.js",
+			"assets/js/jquery.scrolly.min.js",
+			"assets/js/skel.min.js",
+			"assets/js/util.min.js",
+			"assets/js/theme.min.js",
+			"assets/js/main.min.js"
+		])
+		.pipe(concat("scripts.js", { newLine: ";" }))
+		.pipe(gulp.dest("assets/js/"));
 });
 
 gulp.task('img', gulp.series('img-min'));

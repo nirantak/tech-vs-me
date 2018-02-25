@@ -13,11 +13,11 @@ title : Sitemap
         <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
         {% endif %}
         <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     {% endfor %}
     {% for page in site.pages %}
-        {% if page.sitemap != false %}
+        {% if page.ait != true %}
         <url>
             <loc>{{ site.url }}{{ page.url }}</loc>
             {% if page.sitemap.lastmod == null %} <lastmod>2017-11-10T00:20:35+00:00</lastmod>
