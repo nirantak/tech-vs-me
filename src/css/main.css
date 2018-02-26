@@ -1,13 +1,12 @@
 img {
 	display: block;
-	max-width: 1vw;
-	max-height: 1vh;
 	margin: auto;
 }
 
 table {
 	width: 100%;
 }
+
 /* Bootstrap */
 .form-control {
 	display: block;
@@ -200,19 +199,16 @@ input[type="search"] {
 	align-items: center;
 	margin-bottom: 4rem;
 }
-
 .error-ghost {
 	margin: auto;
 	height: 160px;
 }
-
 .error-code {
 	margin: 0;
 	color: #979797;
 	font-size: 7.8rem;
 	line-height: 0.9em;
 }
-
 .error-description {
 	margin: 0;
 	padding: 0;
@@ -221,7 +217,6 @@ input[type="search"] {
 	font-size: 1.9rem;
 	font-weight: 300;
 }
-
 .error-message {
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -231,7 +226,6 @@ input[type="search"] {
 	flex-direction: column;
 	margin: auto;
 }
-
 .error-message a {
 	margin-top: 5px;
 	font-size: 1.4rem;

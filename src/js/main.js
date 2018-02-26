@@ -1,15 +1,49 @@
-// Main Script
+/* Main Script */
 
-// Register Service Worker
+/* Register Service Worker */
 if ("serviceWorker" in navigator) {
 	window.addEventListener("load", function() {
-		navigator.serviceWorker.register("/service-worker.js").then(function() {
-			console.log("Service Worker Registered");
-		});
+		navigator.serviceWorker
+			.register("/service-worker.js")
+			.then(function(reg) {
+				reg.onupdatefound = function() {
+					var installingWorker = reg.installing;
+
+					installingWorker.onstatechange = function() {
+						switch (installingWorker.state) {
+							case "installed":
+								if (navigator.serviceWorker.controller) {
+									cache_update_alert();
+								} else {
+									console.log("Content is now available offline!");
+								}
+								break;
+
+							case "redundant":
+								console.error("The installing service worker became redundant.");
+								break;
+						}
+					};
+				};
+			})
+			.catch(function(e) {
+				console.error("Error during service worker registration: ", e);
+			});
 	});
 }
 
-// Search
+function cached_alert() {
+	alert("Content is now available offline!");
+}
+function cache_update_alert() {
+	if (confirm("Updated content is available\nPlease Refresh")) {
+		window.location.reload(true);
+	} else {
+		console.log("Updated content is available.");
+	}
+}
+
+/* Search */
 $(function() {
 	var show = true;
 

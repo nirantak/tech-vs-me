@@ -16,6 +16,7 @@ sitemap: false
 	<title>AIT Practicals</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<style type="text/css">
+		/* Transitions */
 		div#transit1 {
 			width: 100px;
 			height: 100px;
@@ -37,6 +38,7 @@ sitemap: false
 			transition: all 2s;
 		}
 
+		/* Animation */
 		div#anim1 {
 			width: 100px;
 			height: 100px;
@@ -44,6 +46,10 @@ sitemap: false
 			border-radius: 20px;
 			position: relative;
 			animation: jump 3s infinite;
+		}
+
+		nav ul li a:hover {
+			animation: warning 1.5s infinite ease-in;
 		}
 
 		@keyframes jump {
@@ -66,6 +72,7 @@ sitemap: false
 			}
 		}
 
+		/* Transformation */
 		div.transf {
 			width: 100px;
 			height: 100px;
@@ -73,16 +80,53 @@ sitemap: false
 			border-radius: 20px;
 		}
 		div#transf1:hover {
+			-ms-transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
 			transform: rotate(45deg);
 		}
 		div#transf2:hover {
+			-ms-transform: skew(45deg);
+			-webkit-transform: skew(45deg);
 			transform: skew(45deg);
 		}
 		div#transf3:hover {
+			-ms-transform: scale(0.5,0.5);
+			-webkit-transform: scale(0.5,0.5);
 			transform: scale(0.5,0.5);
 		}
 		div#transf4:hover {
+			-ms-transform: translate(10px,-50px);
+			-webkit-transform: translate(10px,-50px);
 			transform: translate(10px,-50px);
+		}
+		div#transf5:hover {
+			-ms-transform: matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989);
+			-webkit-transform: matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989);
+			transform: matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989);
+		}
+
+		/* Transformation + Animation */
+		@keyframes swing {
+			from {
+				transform: rotate(3deg);
+			}
+			20% {
+				transform: rotate(7deg);
+			}
+			60% {
+				transform: rotate(10deg);
+			}
+			80% {
+				transform: rotate(7deg);
+			}
+			to {
+				transform: rotate(3deg);
+			}
+		}
+
+		#at-in {
+			transform: rotate(3deg);
+			animation: swing 0.5s 5 ease-in;
 		}
 	</style>
 </head>
@@ -128,7 +172,7 @@ sitemap: false
 		<div class="row pb-5" id="video">
 			<h3>HTML5 Video Tag</h3>
 			<div class="w-100"></div>
-			<video width="480" height="360" controls poster="ait_media/iPhone_X_overview.jpg">
+			<video width="60%" height="45%" controls poster="ait_media/iPhone_X_overview.jpg">
 				<source src="ait_media/iPhone_X_overview.webm" type="video/webm">
 				<source src="ait_media/iPhone_X_overview.mp4" type="video/mp4">
 				<source src="ait_media/iPhone_X_overview.ogv" type="video/ogv">
@@ -163,13 +207,14 @@ sitemap: false
 					<div class="col"><div class="transf" id="transf2">&emsp;Skew</div></div>
 					<div class="col"><div class="transf" id="transf3">&emsp;Scale</div></div>
 					<div class="col"><div class="transf" id="transf4">&emsp;Translate</div></div>
+					<div class="col"><div class="transf" id="transf5">&emsp;Matrix</div></div>
 				</div>
 			</div>
 		</div>
-		<div class="row pb-5" id="animation">
+		<div class="row pb-5" id="at">
 			<h3>Animation + Transformation</h3>
 			<div class="w-100"></div>
-			<div id="at"></div>
+			<div id="at-in" class="pt-4"><img width="65%" height="auto" src="ait_media/iPhone_X_overview.jpg" alt="iPhone"></div>
 		</div>
 	</div>
 

@@ -1,7 +1,6 @@
 // Service Worker
 
-var CACHE_VERSION = 1.11;
-var CACHE_NAME = 'tvm-offline-v' + CACHE_VERSION;
+var CACHE_NAME = 'offline-v14';
 var OFFLINE_URL = '/offline.html';
 
 var CACHE_FILES = [
@@ -25,6 +24,7 @@ var CACHE_FILES = [
 	"/images/offline.png",
 	"/images/bg.jpg",
 	"/images/overlay.png",
+	"/images/cb-close.png",
 	"/images/pexels-photo-325153.jpeg",
 	"/assets/css/font-awesome.min.css",
 	"/assets/fonts/fontawesome-webfont.eot",
