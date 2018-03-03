@@ -15,120 +15,7 @@ sitemap: false
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>AIT Practicals</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<style type="text/css">
-		/* Transitions */
-		div#transit1 {
-			width: 100px;
-			height: 100px;
-			background: #138D75;
-			border-radius: 20px;
-			-webkit-transition: width 3s; /* Safari */
-			-webkit-transition-delay: 1s; /* Safari */
-			transition: width 3s;
-			transition-delay: 0.5s;
-		}
-
-		div#transit1:hover {
-			width: 60%;
-		}
-
-		div#transit1:hover:after {
-			content: "Mouse Detected";
-			padding-left: 20px;
-			transition: all 2s;
-		}
-
-		/* Animation */
-		div#anim1 {
-			width: 100px;
-			height: 100px;
-			background: #EC7063;
-			border-radius: 20px;
-			position: relative;
-			animation: jump 3s infinite;
-		}
-
-		nav ul li a:hover {
-			animation: warning 1.5s infinite ease-in;
-		}
-
-		@keyframes jump {
-			0%   {top: 0px; left: 0px}
-			25%  {top:0px; left: 500px;}
-			50%  {top: 500px; left: 500px}
-			75% {top:500px; left: 0px;}
-			100% {top:0px; left: 0px;}
-		}
-
-		@keyframes warning {
-			0% {
-				text-shadow: 0px 0px 4px #000000;
-			}
-			50% {
-				text-shadow: 0 0 20px #000000;
-			}
-			100% {
-				text-shadow: 0px 0px 4px #000000;
-			}
-		}
-
-		/* Transformation */
-		div.transf {
-			width: 100px;
-			height: 100px;
-			background: #2980B9;
-			border-radius: 20px;
-		}
-		div#transf1:hover {
-			-ms-transform: rotate(45deg);
-			-webkit-transform: rotate(45deg);
-			transform: rotate(45deg);
-		}
-		div#transf2:hover {
-			-ms-transform: skew(45deg);
-			-webkit-transform: skew(45deg);
-			transform: skew(45deg);
-		}
-		div#transf3:hover {
-			-ms-transform: scale(0.5,0.5);
-			-webkit-transform: scale(0.5,0.5);
-			transform: scale(0.5,0.5);
-		}
-		div#transf4:hover {
-			-ms-transform: translate(10px,-50px);
-			-webkit-transform: translate(10px,-50px);
-			transform: translate(10px,-50px);
-		}
-		div#transf5:hover {
-			-ms-transform: matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989);
-			-webkit-transform: matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989);
-			transform: matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989);
-		}
-
-		/* Transformation + Animation */
-		@keyframes swing {
-			from {
-				transform: rotate(3deg);
-			}
-			20% {
-				transform: rotate(7deg);
-			}
-			60% {
-				transform: rotate(10deg);
-			}
-			80% {
-				transform: rotate(7deg);
-			}
-			to {
-				transform: rotate(3deg);
-			}
-		}
-
-		#at-in {
-			transform: rotate(3deg);
-			animation: swing 0.5s 5 ease-in;
-		}
-	</style>
+	<link rel="stylesheet" href="ait_media/ait.css">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -141,7 +28,7 @@ sitemap: false
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
 					<a class="nav-link" href="/">Home</a>
-				<li>
+				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						HTML5
@@ -158,7 +45,9 @@ sitemap: false
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="#transition">Transition</a>
 						<a class="dropdown-item" href="#animation">Animation</a>
-						<a class="dropdown-item" href="#transformation">Transformation</a>
+						<a class="dropdown-item" href="#ease">Easing</a>
+						<a class="dropdown-item" href="#transformation">2D Transformation</a>
+						<a class="dropdown-item" href="#d3t">3D Transformation</a>
 						<a class="dropdown-item" href="#at">Animation + Transformation</a>
 					</div>
 				</li>
@@ -198,8 +87,25 @@ sitemap: false
 			<div class="w-100"></div>
 			<div id="anim1"></div>
 		</div>
+		<div class="row mb-5 mt-5 pb-4" id="ease">
+			<h3>Easing</h3>
+			<div class="w-100"></div>
+			<div class="container mb-4">
+				<div class="row">
+					<div class="col"><div id="linear"><span></span></div>Linear</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col"><div id="easing"><span></span></div>Ease</div>
+					<div class="col"><div id="easein"><span></span></div>Ease-In</div>
+					<div class="col"><div id="easeout"><span></span></div>Ease-Out</div>
+					<div class="col"><div id="easeinout"><span></span></div>Ease-In-Out</div>
+				</div>
+			</div>
+		</div>
 		<div class="row pb-5" id="transformation">
-			<h3>CSS3 Transformation</h3>
+			<h3>2D Transformation</h3>
 			<div class="w-100"></div>
 			<div class="container">
 				<div class="row">
@@ -208,6 +114,161 @@ sitemap: false
 					<div class="col"><div class="transf" id="transf3">&emsp;Scale</div></div>
 					<div class="col"><div class="transf" id="transf4">&emsp;Translate</div></div>
 					<div class="col"><div class="transf" id="transf5">&emsp;Matrix</div></div>
+				</div>
+			</div>
+		</div>
+		<div class="row pb-5" id="d3t">
+			<h3>3D Transformation</h3>
+			<div class="w-100"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col"><div class="d3transf" id="d3transf1">&emsp;Rotate X</div></div>
+					<div class="col"><div class="d3transf" id="d3transf2">&emsp;Rotate Y</div></div>
+					<div class="col"><div class="d3transf" id="d3transf3">&emsp;Rotate Z</div></div>
+				</div>
+			</div>
+			<div class="container pt-5 pl-5">
+				<div class="row">
+					<h4>Perspective</h4>
+					<div class="w-100"></div>
+					<section id="red" class="container-perspective">
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+					</section>
+					<section id="blue" class="container-perspective">
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+						<figure></figure>
+					</section>
+				</div>
+			</div>
+			<div class="container pt-5 pl-5">
+				<div class="row">
+					<h4>Card Flip</h4>
+					<div class="w-100"></div>
+					<section class="container-card">
+						<div id="card">
+							<figure class="card-front">1</figure>
+							<figure class="card-back">2</figure>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="container pt-5 pl-5">
+				<div class="row">
+					<h4>Cube</h4>
+					<div class="w-100"></div>
+					<section class="container-cube">
+						<div id="cube" class="cube-show-front">
+							<figure class="cube-front">1</figure>
+							<figure class="cube-back">2</figure>
+							<figure class="cube-right">3</figure>
+							<figure class="cube-left">4</figure>
+							<figure class="cube-top">5</figure>
+							<figure class="cube-bottom">6</figure>
+						</div>
+					</section>
+					<section id="cube-options">
+						<p id="cube-show-buttons">
+							<button class="cube-show-front">Show 1</button>
+							<button class="cube-show-back">Show 2</button>
+							<button class="cube-show-right">Show 3</button>
+							<button class="cube-show-left">Show 4</button>
+							<button class="cube-show-top">Show 5</button>
+							<button class="cube-show-bottom">Show 6</button>
+						</p>
+						<p>
+							<button id="cube-toggle-backface-visibility">Toggle Backface Visibility</button>
+						</p>
+					</section>
+				</div>
+			</div>
+			<div class="container pt-5 pl-5">
+				<div class="row">
+					<h4>Rectangular Prism</h4>
+					<div class="w-100"></div>
+					<section class="container-prism">
+						<div id="box" class="prism-show-front">
+							<figure class="prism-front">1</figure>
+							<figure class="prism-back">2</figure>
+							<figure class="prism-right">3</figure>
+							<figure class="prism-left">4</figure>
+							<figure class="prism-top">5</figure>
+							<figure class="prism-bottom">6</figure>
+						</div>
+					</section>
+					<section id="prism-options">
+						<p id="prism-show-buttons">
+							<button class="prism-show-front">Show 1</button>
+							<button class="prism-show-back">Show 2</button>
+							<button class="prism-show-right">Show 3</button>
+							<button class="prism-show-left">Show 4</button>
+							<button class="prism-show-top">Show 5</button>
+							<button class="prism-show-bottom">Show 6</button>
+						</p>
+						<p>
+							<button id="prism-toggle-backface-visibility">Toggle Backface Visibility</button>
+						</p>
+					</section>
+				</div>
+			</div>
+			<div class="container pt-5 pl-5">
+				<div class="row">
+					<h4>Carousel</h4>
+					<div class="w-100 pb-5"></div>
+					<section class="container-carousel">
+						<div id="carousel">
+							<figure>1</figure>
+							<figure>2</figure>
+							<figure>3</figure>
+							<figure>4</figure>
+							<figure>5</figure>
+							<figure>6</figure>
+							<figure>7</figure>
+							<figure>8</figure>
+							<figure>9</figure>
+							<figure>10</figure>
+							<figure>11</figure>
+							<figure>12</figure>
+							<figure>13</figure>
+							<figure>14</figure>
+							<figure>15</figure>
+							<figure>16</figure>
+							<figure>17</figure>
+							<figure>18</figure>
+							<figure>19</figure>
+							<figure>20</figure>
+						</div>
+					</section>
+					<section id="carousel-options">
+						<p>
+							<label for="carousel-panel-count">panels</label>
+							<input type="range" id="carousel-panel-count" value="9" min="3" max="20" />
+						</p>
+						<p id="carousel-navigation">
+							<button id="carousel-previous" data-increment="-1">Previous</button>
+							<button id="carousel-next" data-increment="1">Next</button>
+						</p>
+						<p>
+							<button id="carousel-toggle-axis">Toggle Carousel Axis</button>
+						</p>
+						<p>
+							<button id="carousel-toggle-backface-visibility">Toggle Backface Visibility</button>
+						</p>
+					</section>
 				</div>
 			</div>
 		</div>
@@ -222,5 +283,7 @@ sitemap: false
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="ait_media/utils.js"></script>
+	<script src="ait_media/ait.js"></script>
 </body>
 </html>
