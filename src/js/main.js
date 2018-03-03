@@ -6,25 +6,7 @@ if ("serviceWorker" in navigator) {
 		navigator.serviceWorker
 			.register("/service-worker.js")
 			.then(function(reg) {
-				reg.onupdatefound = function() {
-					var installingWorker = reg.installing;
-
-					installingWorker.onstatechange = function() {
-						switch (installingWorker.state) {
-							case "installed":
-								if (navigator.serviceWorker.controller) {
-									cache_update_alert();
-								} else {
-									console.log("Content is now available offline!");
-								}
-								break;
-
-							case "redundant":
-								console.error("The installing service worker became redundant.");
-								break;
-						}
-					};
-				};
+				listenForWaitingServiceWorker(reg, promptUserToRefresh);
 			})
 			.catch(function(e) {
 				console.error("Error during service worker registration: ", e);
@@ -32,14 +14,28 @@ if ("serviceWorker" in navigator) {
 	});
 }
 
-function cached_alert() {
-	alert("Content is now available offline!");
+function listenForWaitingServiceWorker(reg, callback) {
+	function awaitStateChange() {
+		reg.installing.addEventListener("statechange", function() {
+			if (this.state === "installed") callback(reg);
+		});
+	}
+	if (!reg) return;
+	if (reg.waiting) return callback(reg);
+	if (reg.installing) awaitStateChange();
+	reg.addEventListener("updatefound", awaitStateChange);
 }
-function cache_update_alert() {
-	if (confirm("Updated content is available\nPlease Refresh")) {
-		window.location.reload(true);
-	} else {
-		console.log("Updated content is available.");
+
+// Reload once when the new Service Worker starts activating
+var refreshing;
+navigator.serviceWorker.addEventListener("controllerchange", function() {
+	if (refreshing) return;
+	refreshing = true;
+	window.location.reload(true);
+});
+function promptUserToRefresh(reg) {
+	if (window.confirm("Updates are available!\nClick OK to refresh")) {
+		reg.waiting.postMessage("skipWaiting");
 	}
 }
 

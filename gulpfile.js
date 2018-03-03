@@ -1,23 +1,17 @@
 const gulp = require('gulp');
 const uglify = require('gulp-uglify');
-// const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleancss = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
-// const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
-const ghPages = require('gulp-gh-pages');
 
-const sass_Options = {
-	errLogToConsole: true,
-	outputStyle: 'compressed'
-};
 const cleancss_Options = {
 	debug: true
 };
-const htmlmin_Options = {
-	collapseWhitespace: true
+const autoprefixer_Options = {
+	browsers: ["last 2 versions"],
+	cascade: false
 };
 const imagemin_Plugins = [
 	imagemin.gifsicle({ interlaced: true }),
@@ -42,10 +36,11 @@ gulp.task('img-min', function() {
 // Minify CSS
 gulp.task('minify-css', function() {
 	return gulp
-		.src('src/css/main.css')
+		.src("src/css/main.css")
+		.pipe(autoprefixer(autoprefixer_Options))
 		.pipe(cleancss(cleancss_Options))
-		.pipe(rename({ suffix: '.min' }))
-		.pipe(gulp.dest('assets/css/'));
+		.pipe(rename({ suffix: ".min" }))
+		.pipe(gulp.dest("assets/css/"));
 });
 
 // Merge CSS files
@@ -83,7 +78,6 @@ gulp.task('uglify-js2', function () {
 gulp.task('merge-js', function() {
 	return gulp
 		.src([
-			"assets/js/bootstrap.min.js",
 			"assets/js/bs3-typeahead.min.js",
 			"assets/js/jquery.scrollex.min.js",
 			"assets/js/jquery.scrolly.min.js",
@@ -96,18 +90,21 @@ gulp.task('merge-js', function() {
 		.pipe(gulp.dest("assets/js/"));
 });
 
+// Gulp tasks
 gulp.task('img', gulp.series('img-min'));
 gulp.task('css', gulp.series('minify-css', 'merge-css'));
 gulp.task('js', gulp.series(gulp.parallel('uglify-js', 'uglify-js2'), 'merge-js'));
 
-gulp.task('default', gulp.series(gulp.parallel('img-min', 'minify-css', 'uglify-js', 'uglify-js2'), gulp.parallel('merge-css', 'merge-js')));
+// Default task
+gulp.task(
+	"default",
+	gulp.series(
+		gulp.parallel("img-min", "minify-css", "uglify-js", "uglify-js2"),
+		gulp.parallel("merge-css", "merge-js")
+	)
+);
 
-// Deply _site subdir to branch gh-pages
-gulp.task('deploy', gulp.series('default', function () {
-	return gulp.src('_site/**/*')
-		.pipe($.ghPages());
-}));
-
+// Watch files for changes
 gulp.task('watch', function() {
 	gulp.watch('src/css/main.css', gulp.series('minify-css', 'merge-css'));
 	gulp.watch('src/js/main.js', gulp.series('uglify-js', 'merge-js'));

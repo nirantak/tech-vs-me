@@ -1,6 +1,6 @@
 // Service Worker
 
-var CACHE_NAME = 'offline-v14';
+var CACHE_NAME = 'offline-v15';
 var OFFLINE_URL = '/offline.html';
 
 var CACHE_FILES = [
@@ -78,4 +78,10 @@ self.addEventListener('fetch', function (e) {
 			});
 		})
 	);
+});
+
+self.addEventListener("message", function(event) {
+	if (event.data === "skipWaiting") {
+		return self.skipWaiting();
+	}
 });
