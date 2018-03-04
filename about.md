@@ -1,14 +1,15 @@
 ---
 layout: page
-title: About - Tech-vs-Me
-description: Tech-vs-Me provides detailed comparisons between tech products and services, that enable our readers to make informed choices.
-keywords: Tech Versus Me, tech, blog, Tech-vs-Me, tech comparison
+title: "About | Tech vs Me"
+description: We provide detailed comparisons between tech products and services, that enable our readers to make informed choices.
+keywords: Tech Versus Me, tech, blog, Tech-vs-Me, tech comparison, tech vs me
 author: Nirantak Raghav
 sitemap:
     priority: 0.7
     lastmod: 2018-01-24
     changefreq: weekly
 ---
+
 ## About this Site
 
 <span class="image left"><img alt="Content" src="{{ "/images/cup-mug-desk-office.jpg" | absolute_url }}" alt="" /></span>

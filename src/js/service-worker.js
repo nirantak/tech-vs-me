@@ -1,6 +1,6 @@
 // Service Worker
 
-var CACHE_NAME = 'offline-v18';
+var CACHE_NAME = 'offline-v19';
 var OFFLINE_URL = '/offline.html';
 
 var CACHE_FILES = [
@@ -44,22 +44,22 @@ var CACHE_FILES = [
 ];
 
 self.addEventListener('install', function (e) {
-	console.log('[ServiceWorker] Install');
+	console.log('[SW] Installing...');
 	e.waitUntil(
 		caches.open(CACHE_NAME).then(function (cache) {
-			console.log('[ServiceWorker] Caching app shell');
+			console.log('[SW] Caching app...');
 			return cache.addAll(CACHE_FILES);
 		})
 	);
 });
 
 self.addEventListener('activate', function (e) {
-	console.log('[ServiceWorker] Activate');
+	console.log('[SW] Activating...');
 	e.waitUntil(
 		caches.keys().then(function (keyList) {
 			return Promise.all(keyList.map(function (key) {
 				if (key !== CACHE_NAME) {
-					console.log('[ServiceWorker] Removing old cache', key);
+					console.log('[SW] Removing old cache... ', key);
 					return caches.delete(key);
 				}
 			}));
@@ -69,11 +69,10 @@ self.addEventListener('activate', function (e) {
 });
 
 self.addEventListener('fetch', function (e) {
-	console.log('[ServiceWorker] Fetch', e.request.url);
 	e.respondWith(
 		caches.match(e.request).then(function (response) {
 			return response || fetch(e.request).catch(function (error) {
-				console.log('Fetch failed; returning offline page instead.', error);
+				console.log('[SW] Fetch failed; returning offline page instead. ', error);
 				return caches.match(OFFLINE_URL);
 			});
 		})

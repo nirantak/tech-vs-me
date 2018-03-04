@@ -9,9 +9,11 @@ if ("serviceWorker" in navigator) {
 				listenForWaitingServiceWorker(reg, promptUserToRefresh);
 			})
 			.catch(function(e) {
-				console.error("Error during service worker registration: ", e);
+				console.error("[SW] Error during service worker registration: ", e);
 			});
 	});
+} else {
+	console.log("Ahh! Your browser does not support Service Workers");
 }
 
 function listenForWaitingServiceWorker(reg, callback) {
