@@ -49,15 +49,10 @@ $("#contact-form").submit(function(e) {
 	e.preventDefault();
 
 	var $form = $(this);
-	$.get("https://ipinfo.io", function(response) {
-		var $data = $form.serialize() + "&" + $.param(response);
-		$.post($form.attr("action"), $data).then(
-			function() {
-				alert("Your response has been recorded!");
-				document.getElementById("contact-form").reset();
-			}
-		);
-	}, "jsonp");
+	$.post($form.attr("action"), $form.serialize()).then(function() {
+		alert("Your response has been recorded!");
+		document.getElementById("contact-form").reset();
+	});
 });
 
 /* Search */

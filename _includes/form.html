@@ -1,15 +1,10 @@
 <form name="contact-form" id="contact-form" action="thank-you" method="post" autocomplete="on" data-netlify="true" netlify-honeypot="bot-field" netlify>
 	<input type="hidden" name="form-name" id="form-name" value="contact-form">
 	<input type="hidden" name="bot-field" id="bot-field">
-	<input type="hidden" name="ip">
-	<input type="hidden" name="city">
-	<input type="hidden" name="region">
-	<input type="hidden" name="country">
-	<input type="hidden" name="loc">
-	<input type="hidden" name="org">
 	<input type="text" name="name" id="name" placeholder="Name" required autofocus minlength="3" maxlength="100"><br />
-	<textarea name="message" id="message" rows="3" cols="10" required placeholder="Feedback or Request for comparison..." minlength="10" maxlength="256"></textarea><br />
+	<textarea name="message" id="message" rows="3" cols="10" required placeholder="Feedback or Request for comparison..." minlength="10" maxlength="256"></textarea>
+	<br />
 	<div netlify-recaptcha></div>
 	<br />
-	<button type="submit" id="contact-button" title="Your IP may be recorded for spam filtering">Send</button>
+	<button type="submit" id="contact-button">Send</button>
 </form>
