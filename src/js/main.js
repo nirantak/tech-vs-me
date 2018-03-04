@@ -20,10 +20,15 @@ function listenForWaitingServiceWorker(reg, callback) {
 			if (this.state === "installed") callback(reg);
 		});
 	}
-	if (!reg) return;
-	if (reg.waiting) return callback(reg);
-	if (reg.installing) awaitStateChange();
-	reg.addEventListener("updatefound", awaitStateChange);
+	if (!reg) {
+		return;
+	} else if (reg.waiting) {
+		return callback(reg);
+	} else if (reg.installing) {
+		awaitStateChange();
+	} else {
+		reg.addEventListener("updatefound", awaitStateChange);
+	}
 }
 
 // Reload once when the new Service Worker starts activating
@@ -38,6 +43,22 @@ function promptUserToRefresh(reg) {
 		reg.waiting.postMessage("skipWaiting");
 	}
 }
+
+/* Contact Form */
+$("#contact-form").submit(function(e) {
+	e.preventDefault();
+
+	var $form = $(this);
+	$.get("https://ipinfo.io", function(response) {
+		var $data = $form.serialize() + "&" + $.param(response);
+		$.post($form.attr("action"), $data).then(
+			function() {
+				alert("Your response has been recorded!");
+				document.getElementById("contact-form").reset();
+			}
+		);
+	}, "jsonp");
+});
 
 /* Search */
 $(function() {
