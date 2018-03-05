@@ -41,9 +41,7 @@ navigator.serviceWorker.addEventListener("controllerchange", function() {
 	window.location.reload(true);
 });
 function promptUserToRefresh(reg) {
-	if (window.confirm("Updates are available!\nClick OK to refresh")) {
-		reg.waiting.postMessage("skipWaiting");
-	}
+	reg.waiting.postMessage("skipWaiting");
 }
 
 /* Contact Form */
@@ -52,8 +50,13 @@ $("#contact-form").submit(function(e) {
 
 	var $form = $(this);
 	$.post($form.attr("action"), $form.serialize()).then(function() {
-		alert("Your response has been recorded!");
+		$("#contact-form").prepend("<div id='submit-successful' style='color:green; margin:auto;'>Your response has been recorded!</div>");
 		document.getElementById("contact-form").reset();
+		setTimeout(function() {
+			if ($("#submit-successful").length > 0) {
+				$("#submit-successful").remove();
+			}
+		}, 10000);
 	});
 });
 

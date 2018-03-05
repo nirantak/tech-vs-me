@@ -68,6 +68,8 @@ div.transf {
 	height: 100px;
 	background: #2980b9;
 	border-radius: 20px;
+	text-align: center;
+	vertical-align: middle;
 }
 div#transf1:hover {
 	-ms-transform: rotate(45deg);
@@ -90,6 +92,46 @@ div#transf4:hover {
 	transform: translate(10px, -50px);
 }
 div#transf5:hover {
+	-ms-transform: matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989);
+	-webkit-transform: matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989);
+	transform: matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989);
+}
+
+/* 2D Transformation with images */
+div.transf-img {
+	width: 150px;
+	height: 150px;
+	background: #2980b9;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+div#transf-img1 { background-image: url("1.jpeg"); }
+div#transf-img2 { background-image: url("2.jpeg"); }
+div#transf-img3 { background-image: url("3.jpeg"); }
+div#transf-img4 { background-image: url("4.jpeg"); }
+div#transf-img5 { background-image: url("6.jpeg"); }
+
+div#transf-img1:hover {
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+div#transf-img2:hover {
+	-ms-transform: skew(45deg);
+	-webkit-transform: skew(45deg);
+	transform: skew(45deg);
+}
+div#transf-img3:hover {
+	-ms-transform: scale(0.5, 0.5);
+	-webkit-transform: scale(0.5, 0.5);
+	transform: scale(0.5, 0.5);
+}
+div#transf-img4:hover {
+	-ms-transform: translate(10px, -50px);
+	-webkit-transform: translate(10px, -50px);
+	transform: translate(10px, -50px);
+}
+div#transf-img5:hover {
 	-ms-transform: matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989);
 	-webkit-transform: matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989);
 	transform: matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989);
