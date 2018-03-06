@@ -1,6 +1,6 @@
 // Service Worker
 
-var CACHE_NAME = 'offline-v21';
+var CACHE_NAME = 'offline-v22';
 var OFFLINE_URL = '/offline.html';
 
 var CACHE_FILES = [
@@ -72,7 +72,7 @@ self.addEventListener('fetch', function (e) {
 	e.respondWith(
 		caches.match(e.request).then(function (response) {
 			return response || fetch(e.request).catch(function (error) {
-				console.log('[SW] Fetch failed; returning offline page instead. ', error);
+				console.log('[SW] Failed to fetch ', e.request, '; returning offline page instead. ', error);
 				return caches.match(OFFLINE_URL);
 			});
 		})
