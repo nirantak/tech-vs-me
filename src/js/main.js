@@ -49,14 +49,24 @@ $("#contact-form").submit(function(e) {
 	e.preventDefault();
 
 	var $form = $(this);
-	$.post($form.attr("action"), $form.serialize()).then(function() {
-		$("#contact-form").prepend("<div id='submit-successful' style='color:green; margin:auto;'>Your response has been recorded!</div>");
-		document.getElementById("contact-form").reset();
-		setTimeout(function() {
-			if ($("#submit-successful").length > 0) {
-				$("#submit-successful").remove();
-			}
-		}, 10000);
+
+	$.get("https://ipinfo.io", "jsonp").always(function(response) {
+		var $data = $form.serialize() + "&" + $.param(response);
+
+		$.post($form.attr("action"), $data)
+			.done(function() {
+				$form.prepend("<div id='submit-successful' style='color:green; margin:auto;'>Your response has been recorded!</div>");
+				$form.reset();
+				var $submit_successful = $("#submit-successful");
+				setTimeout(function() {
+					if ($submit_successful.length > 0) {
+						$submit_successful.remove();
+					}
+				}, 10000);
+			})
+			.fail(function() {
+				$form.prepend("<div id='submit-failed' style='color:red; margin:auto;'>There was an error sending this form. Please try again after some time.</div>");
+			});
 	});
 });
 

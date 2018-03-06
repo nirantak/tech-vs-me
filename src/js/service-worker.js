@@ -1,6 +1,6 @@
 // Service Worker
 
-var CACHE_NAME = 'offline-v20';
+var CACHE_NAME = 'offline-v21';
 var OFFLINE_URL = '/offline.html';
 
 var CACHE_FILES = [
