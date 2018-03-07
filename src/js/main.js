@@ -38,7 +38,7 @@ var refreshing;
 navigator.serviceWorker.addEventListener("controllerchange", function() {
 	if (refreshing) return;
 	refreshing = true;
-	window.location.reload(true);
+	window.location.reload();
 });
 function promptUserToRefresh(reg) {
 	reg.waiting.postMessage("skipWaiting");

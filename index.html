@@ -37,9 +37,8 @@ sitemap:
         <nav id="nav">
             {% include nav.html %}
             <ul class="icons">
-                <li><a href="https://twitter.com/{{site.twitter}}" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="https://facebook.com/{{site.facebook}}" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                <li><a href="https://github.com/{{site.github}}" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="https://twitter.com/{{site.twitter}}" target="_blank" class="icon fa-twitter" rel="noopener"><span class="label">Twitter</span></a></li>
+                <li><a href="https://github.com/{{site.github}}" target="_blank" class="icon fa-github" rel="noopener"><span class="label">GitHub</span></a></li>
                 <li><a href="{{ "/sitemap.xml" | absolute_url }}" target="_blank" class="icon fa-sitemap"><span class="label">Sitemap</span></a></li>
                 <li><a href="{{ "/feed.xml" | absolute_url }}" target="_blank" class="icon fa-rss"><span class="label">Atom Feed</span></a></li>
             </ul>
@@ -58,8 +57,8 @@ sitemap:
             </article>
             <!-- Posts -->
             <section class="posts">
-                {% for post in site.posts limit:3 %}
-                <article>
+                {% for post in site.posts limit:2 %}
+                <article id="article-{{ forloop.index }}">
                     <header>
                         <span class="date">{{ post.date | date_to_string }}</span>
                         <h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</h2>

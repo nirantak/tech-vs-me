@@ -236,3 +236,13 @@ input[type="search"] {
 	display: block;
 	margin: auto;
 }
+
+#netlify-recaptcha, .g-recaptcha {
+	display: block;
+}
+
+@media screen and (max-width:736px) {
+    #article-2 {
+		display: none;
+	}
+}
