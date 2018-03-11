@@ -34,7 +34,7 @@ sitemap: false
 		#b1 {
 			width: 300px;
 			height: 300px;
-			background-image: url("ait_media/1.jpeg");
+			background-image: url("/ait_media/1.jpeg");
 			background-repeat: no-repeat;
 			background-size: cover;
 			box-shadow: -8px 8px 4px #444444;
@@ -45,7 +45,7 @@ sitemap: false
 		#b2 {
 			width: 300px;
 			height: 300px;
-			background-image: url("ait_media/4.jpeg");
+			background-image: url("/ait_media/4.jpeg");
 			background-repeat: no-repeat;
 			background-size: cover;
 			box-shadow: inset 0 0 80px #000000;
@@ -54,7 +54,7 @@ sitemap: false
 		#b3 {
 			width: 300px;
 			height: 300px;
-			background-image: url("ait_media/6.jpeg");
+			background-image: url("/ait_media/6.jpeg");
 			background-repeat: no-repeat;
 			background-size: cover;
 			box-shadow: 8px 8px 4px #444444;
@@ -74,16 +74,29 @@ sitemap: false
 			width: 100%;
 			height: 400px;
 			text-align: center;
-			background-image: -webkit-radial-gradient(0 0, ellipse cover, #3498db, #9b59b6);
+			background-image: -webkit-radial-gradient(0 0, ellipse cover, #635f5f, #ffffff, #3498db, #9b59b6);
 		}
 
 		/*Multiple Backgrounds*/
 
 		#bg {
+			display: block;
+			position: relative;
 			height: 300px;
-			background-image: url('ait_media/3.jpeg'), url('ait_media/2.jpeg'), url('ait_media/5.jpeg');
+		}
+
+		#bg::after {
+			content: "";
+			background-image: url('/ait_media/3.jpeg'), url('/ait_media/2.jpeg'), url('/ait_media/5.jpeg');
 			background-repeat: no-repeat, no-repeat, no-repeat;
 			background-position: left, bottom, right;
+			opacity: 0.3;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			position: absolute;
+			z-index: -1;
 		}
 
 		/*Patterns*/
@@ -109,14 +122,14 @@ sitemap: false
 
 		@font-face {
 			font-family: 'PermanentMarker';
-			src: url('ait_media/PermanentMarker-Regular.ttf') format('truetype');
+			src: url('/ait_media/PermanentMarker-Regular.ttf') format('truetype');
 			font-weight: normal;
 			font-style: bold;
 		}
 
 		@font-face {
 			font-family: 'ShadowsIntoLight';
-			src: url('ait_media/ShadowsIntoLightTwo-Regular.ttf') format('truetype');
+			src: url('/ait_media/ShadowsIntoLightTwo-Regular.ttf') format('truetype');
 			font-weight: 900;
 			font-style: bold;
 		}
@@ -144,7 +157,7 @@ sitemap: false
 					<a class="nav-link" href="/">Home</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+					<a class="nav-link dropdown-toggle" href="/ait" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
 					 aria-expanded="false">
 						HTML5
 					</a>
@@ -154,7 +167,7 @@ sitemap: false
 					</div>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+					<a class="nav-link dropdown-toggle" href="/ait" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
 					 aria-expanded="false">
 						CSS3
 					</a>
@@ -220,6 +233,8 @@ sitemap: false
 		</div>
 		<div class="row pb-5" id="bg">
 			<h3>Multiple Backgrounds</h3>
+			<p>The Pixel 2 XL has a secret weapon of its own in Google Assistant, which is not only smarter and faster than Siri, it gets
+			tripped up less with your queries. Plus, you can summon Google Assistant with a quick squeeze of the bottom of the phone.</p>
 			<div class="w-100"></div>
 		</div>
 		<div class="row mb-5 mt-5" id="pattern">
