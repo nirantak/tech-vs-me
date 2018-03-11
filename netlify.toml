@@ -1,0 +1,31 @@
+# Netlify Deploy Contexts
+
+[build]
+  publish = "_site"
+  command = "bundle exec jekyll build"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options         = "DENY"
+    X-Content-Type-Options  = "nosniff"
+    X-XSS-Protection        = "1; mode=block"
+
+[[redirects]]
+  from    = "/api/*"
+  to      = "https://api.techversus.me/:splat/?format=json"
+  status  = 200
+  force   = true
+  headers = {Content-Type = "application/json"}
+
+[[redirects]]
+  from    = "/github"
+  to      = "https://github.com/nirantak/"
+  status  = 301
+  force   = true
+
+[[redirects]]
+  from    = "/twitter"
+  to      = "https://twitter.com/NirantakRaghav"
+  status  = 301
+  force   = true
