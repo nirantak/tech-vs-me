@@ -5,9 +5,9 @@ description:        "We provide detailed comparisons between tech products and s
 locale:             en_US
 encoding: utf-8
 timezone: Asia/Kolkata
-url: "https://techversus.me" # the base hostname & protocol for your site
-baseurl: "" # the subpath of your site, e.g. /blog
-api_url: "https://api.techversus.me"
+url: "https://techversus.me"
+baseurl: ""
+api_url: "https://techversusme.herokuapp.com/"
 
 defaults:
 - scope:
@@ -43,10 +43,6 @@ analytics-id:       UA-105821168-2
 twitter:            NirantakRaghav
 github:             nirantak
 
-# personal
-location:           Mumbai, India
-email:              contact@nirantak.com
-
 # Gems
 plugins:
   - jekyll-mentions
@@ -59,7 +55,7 @@ paginate: 6
 paginate_path: "/all/page:num/"
 
 jekyll-mentions:
-    base_url: https://github.com
+  base_url: https://github.com
 
-# Exclude list
+include: [_redirects, _headers]
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, package-lock.json, _site, src, vendor, CNAME, .env, LICENSE, Rakefile, old, assets/icon/favicon_package.zip]

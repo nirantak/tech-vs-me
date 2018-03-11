@@ -1,0 +1,3 @@
+/api/*      https://techversusme.herokuapp.com/:splat   200
+/github     https://github.com/nirantak/                301
+/twitter    https://twitter.com/NirantakRaghav          301
