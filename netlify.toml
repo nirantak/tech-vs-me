@@ -13,10 +13,10 @@
 
 [[redirects]]
   from    = "/api/*"
-  to      = "https://api.techversus.me/:splat/?format=json"
+  to      = "https://api.techversus.me/:splat"
   status  = 200
   force   = true
-  headers = {Content-Type = "application/json"}
+  headers = {Accept = "application/json; indent=4, application/json", Content-Type = "application/json"}
 
 [[redirects]]
   from    = "/github"
