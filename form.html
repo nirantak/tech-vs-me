@@ -1,0 +1,222 @@
+---
+layout: compress
+title: "AIT Practicals"
+ait: true
+permalink: /ait/form
+sitemap: false
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Form | AIT Practicals</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	<style type="text/css">
+		label,
+		input {
+			display: inline-block;
+			vertical-align: baseline;
+			width: 200px;
+		}
+
+		form,
+		input {
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+		}
+
+		input[type=submit] {
+			margin: auto;
+			cursor: pointer;
+		}
+
+		form {
+			width: 100%;
+		}
+
+		textarea {
+			width: 70%;
+		}
+
+		@media screen and (max-width: 600px) {
+			form label {
+				display: none;
+			}
+			form {
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+			form input:not([type=submit]), form textarea {
+				border: none;
+				border-left: 6px solid #2196F3;
+				background-color: #ddffff;
+				padding-left: 20px;
+				width: 100%;
+				height: 30px;
+			}
+			.submit {
+				text-align: center;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">AIT</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+		 aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="/">Home</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="/ait" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+					 aria-expanded="false">
+						HTML5
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/ait#video">Video</a>
+						<a class="dropdown-item" href="/ait#audio">Audio</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="/ait" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+					 aria-expanded="false">
+						CSS3
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/ait#transition">Transition</a>
+						<a class="dropdown-item" href="/ait#animation">Animation</a>
+						<a class="dropdown-item" href="/ait#ease">Easing</a>
+						<a class="dropdown-item" href="/ait#transformation">2D Transformation</a>
+						<a class="dropdown-item" href="/ait#d3t">3D Transformation</a>
+						<a class="dropdown-item" href="/ait#at">Animation + Transformation</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+					 aria-expanded="false">
+						CSS3 Aesthetics
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/ait/aesthetics#txt">Text Shadow</a>
+						<a class="dropdown-item" href="/ait/aesthetics#box">Box Shadow</a>
+						<a class="dropdown-item" href="/ait/aesthetics#gradient">Gradient</a>
+						<a class="dropdown-item" href="/ait/aesthetics#bg">Multiple Backgrounds</a>
+						<a class="dropdown-item" href="/ait/aesthetics#pattern">Gradient Patterns</a>
+						<a class="dropdown-item" href="/ait/aesthetics#font">Font Face</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Form</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row pb-5 pt-5">
+			<form name="register" id="register">
+				<h1>Registration Form</h1>
+				<div class="pt-4">
+					<label for="name">Full Name: </label>
+					<input id="name" name="name" type="text" placeholder="e.g. John Doe" pattern="([a-zA-Z]{3,30}\s*)+[a-zAZ]{3,30}" required
+					 aria-required="true" autofocus>
+				</div>
+				<div class="pt-4">
+					<label for="email">Email ID: </label>
+					<input id="email" name="email" type="email" placeholder="e.g. abc@email.com" required aria-required="true">
+				</div>
+				<div class="pt-4">
+					<label for="password">Password: </label>
+					<input id="password" name="password" type="password" placeholder="e.g. a64!#9opqw&" required aria-required="true">
+				</div>
+				<div class="pt-4">
+					<label for="phone">Phone: </label>
+					<input id="phone" name="phone" type="number" placeholder="e.g. 9876543210" min="1000000000" max="9999999999" required aria-required="true">
+				</div>
+				<div class="pt-4">
+					<label for="blog">Blog: </label>
+					<input id="blog" name="blog" type="url" placeholder="e.g. https://techversus.me" required aria-required="true">
+				</div>
+				<div class="pt-4">
+					<label for="color">Theme Colour: </label>
+					<input id="color" name="color" type="color" placeholder="Profile Theme" value="#00AAFF">
+				</div>
+				<div class="pt-4">
+					<label for="date">DOB: </label>
+					<input id="date" name="date" type="date" placeholder="DOB">
+				</div>
+				<div class="pt-4">
+					<label for="gender">Gender</label>
+					<input id="gender" name="gender" type="text" list="genders" placeholder="Select Gender" autocomplete="off">
+					<datalist id="genders">
+						<select>
+							<option value="Male"></option>
+							<option value="Female"></option>
+							<option value="Other"></option>
+							<option value="Prefer Not to Say"></option>
+						</select>
+					</datalist>
+				</div>
+				<div class="pt-4 submit">
+					<input type="Submit" value="Register">
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row pb-5 pt-5">
+			<form name="feedback" id="feedback">
+				<h1>Feedback</h1>
+				<div class="pt-4">
+					<label for="fname">Full Name: </label>
+					<input id="fname" name="fname" type="text" placeholder="e.g. John Doe" pattern="([a-zA-Z]{3,30}\s*)+[a-zAZ]{3,30}" required
+					 aria-required="true" autofocus>
+				</div>
+				<div class="pt-4">
+					<label for="femail">Email ID: </label>
+					<input id="femail" name="femail" type="email" placeholder="e.g. abc@email.com" required aria-required="true">
+				</div>
+				<div class="pt-4">
+					<label for="info">Feedback: </label>
+					<textarea id="info" name="info" required rows="3" cols="100" placeholder="Write something here..."></textarea>
+				</div>
+				<div class="pt-4">
+					<label for="rating">Rating:
+					</label><span id="range">8</span>
+					<input id="rating" name="rating" type="range" min="1" max="9" step="1" onchange="showValue(this.value);" value="8" required aria-required="true">
+					<script>
+						function showValue(newValue) {
+							document.getElementById("range").innerHTML = newValue;
+						}
+					</script>
+				</div>
+				<div class="pt-4 submit">
+					<input type="Submit" value="Send">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div style="padding-top: 400px;"></div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	 crossorigin="anonymous"></script>
+</body>
+
+</html>
