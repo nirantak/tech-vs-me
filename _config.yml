@@ -58,4 +58,4 @@ jekyll-mentions:
   base_url: https://github.com
 
 include: [_redirects, _headers]
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, package-lock.json, _site, src, vendor, CNAME, .env, netlify.toml, LICENSE, Rakefile, old, assets/icon/favicon_package.zip]
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, package-lock.json, _site, src, vendor, CNAME, .env, netlify.toml, LICENSE, Rakefile, old]
