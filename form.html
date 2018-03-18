@@ -66,6 +66,35 @@ sitemap: false
 			}
 		}
 	</style>
+	<script>
+		function LightenDarkenColor(col, amt) {
+				var usePound = false;
+
+				if (col[0] == "#") {
+					col = col.slice(1);
+					usePound = true;
+				}
+
+				var num = parseInt(col, 16);
+
+				var r = (num >> 16) + amt;
+
+				if (r > 255) r = 255;
+				else if (r < 0) r = 0;
+
+				var b = ((num >> 8) & 0x00FF) + amt;
+
+				if (b > 255) b = 255;
+				else if (b < 0) b = 0;
+
+				var g = (num & 0x0000FF) + amt;
+
+				if (g > 255) g = 255;
+				else if (g < 0) g = 0;
+
+				return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
+			}
+	</script>
 </head>
 
 <body>
@@ -152,8 +181,21 @@ sitemap: false
 				</div>
 				<div class="pt-4">
 					<label for="color">Theme Colour: </label>
-					<input id="color" name="color" type="color" placeholder="Profile Theme" value="#00AAFF">
+					<input id="color" name="color" type="color" onchange="changeTheme(this.value);" placeholder="Profile Theme" value="#00AAFF">
 				</div>
+				<script>
+					function changeTheme(newValue) {
+						if (document.documentElement.clientWidth < 600) {
+							var elem = document.querySelectorAll('form input:not([type=submit]), form textarea');
+							var lightValue = LightenDarkenColor(newValue, 160);
+							var i;
+							for (i = 0; i < elem.length; i++) {
+								elem[i].style.borderLeft = `6px solid ${newValue}`;
+								elem[i].style.backgroundColor = lightValue;
+							}
+						}
+					}
+				</script>
 				<div class="pt-4">
 					<label for="date">DOB: </label>
 					<input id="date" name="date" type="date" placeholder="DOB">
