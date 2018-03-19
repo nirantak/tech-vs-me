@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /ait
+Disallow: /ait/
+
+Sitemap: https://techversus.me/sitemap.xml

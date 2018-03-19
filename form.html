@@ -156,28 +156,29 @@ sitemap: false
 	</nav>
 	<div class="container">
 		<div class="row pb-5 pt-5">
-			<form name="register" id="register">
+			<form name="ait_register" id="ait_register" action="thank-you" method="post" autocomplete="on" data-netlify="true" netlify-honeypot="bot-field1" netlify>
 				<h1>Registration Form</h1>
+				<input type="hidden" name="bot-field1" id="bot-field1">
 				<div class="pt-4">
 					<label for="name">Full Name: </label>
-					<input id="name" name="name" type="text" placeholder="e.g. John Doe" pattern="([a-zA-Z]{3,30}\s*)+[a-zAZ]{3,30}" required
+					<input id="name" name="name" type="text" placeholder="Name e.g. John Doe" pattern="([a-zA-Z]{3,30}\s*)+[a-zAZ]{3,30}" required
 					 aria-required="true" autofocus>
 				</div>
 				<div class="pt-4">
 					<label for="email">Email ID: </label>
-					<input id="email" name="email" type="email" placeholder="e.g. abc@email.com" required aria-required="true">
+					<input id="email" name="email" type="email" placeholder="Email e.g. abc@email.com" required aria-required="true">
 				</div>
 				<div class="pt-4">
 					<label for="password">Password: </label>
-					<input id="password" name="password" type="password" placeholder="e.g. a64!#9opqw&" required aria-required="true">
+					<input id="password" name="password" type="password" placeholder="Password e.g. a64!#9opqw&" minlength="8" maxlength="255" required aria-required="true">
 				</div>
 				<div class="pt-4">
 					<label for="phone">Phone: </label>
-					<input id="phone" name="phone" type="number" placeholder="e.g. 9876543210" min="1000000000" max="9999999999" required aria-required="true">
+					<input id="phone" name="phone" type="number" placeholder="Phone e.g. 9876543210" min="1000000000" max="9999999999" required aria-required="true">
 				</div>
 				<div class="pt-4">
 					<label for="blog">Blog: </label>
-					<input id="blog" name="blog" type="url" placeholder="e.g. https://techversus.me" required aria-required="true">
+					<input id="blog" name="blog" type="url" placeholder="Site e.g. https://techversus.me" required aria-required="true">
 				</div>
 				<div class="pt-4">
 					<label for="color">Theme Colour: </label>
@@ -198,7 +199,7 @@ sitemap: false
 				</script>
 				<div class="pt-4">
 					<label for="date">DOB: </label>
-					<input id="date" name="date" type="date" placeholder="DOB">
+					<input id="date" name="date" type="date" min="2005-01-01" max="1918-01-01" placeholder="DOB">
 				</div>
 				<div class="pt-4">
 					<label for="gender">Gender</label>
@@ -220,20 +221,21 @@ sitemap: false
 	</div>
 	<div class="container">
 		<div class="row pb-5 pt-5">
-			<form name="feedback" id="feedback">
+			<form name="ait_feedback" id="ait_feedback" action="thank-you" method="post" autocomplete="on" data-netlify="true" netlify-honeypot="bot-field2" netlify>
 				<h1>Feedback</h1>
+				<input type="hidden" name="bot-field2" id="bot-field2">
 				<div class="pt-4">
 					<label for="fname">Full Name: </label>
-					<input id="fname" name="fname" type="text" placeholder="e.g. John Doe" pattern="([a-zA-Z]{3,30}\s*)+[a-zAZ]{3,30}" required
+					<input id="fname" name="fname" type="text" placeholder="Name e.g. John Doe" pattern="([a-zA-Z]{3,30}\s*)+[a-zAZ]{3,30}" required
 					 aria-required="true" autofocus>
 				</div>
 				<div class="pt-4">
 					<label for="femail">Email ID: </label>
-					<input id="femail" name="femail" type="email" placeholder="e.g. abc@email.com" required aria-required="true">
+					<input id="femail" name="femail" type="email" placeholder="Email e.g. abc@email.com" required aria-required="true">
 				</div>
 				<div class="pt-4">
 					<label for="info">Feedback: </label>
-					<textarea id="info" name="info" required rows="3" cols="100" placeholder="Write something here..."></textarea>
+					<textarea id="info" name="info" required rows="3" cols="100" placeholder="Feedback - Write something here..."></textarea>
 				</div>
 				<div class="pt-4">
 					<label for="rating">Rating:
