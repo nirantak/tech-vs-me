@@ -19,6 +19,18 @@
   headers = {Accept = "application/json; indent=4, application/json", Content-Type = "application/json"}
 
 [[redirects]]
+  from    = "/services"
+  to      = "/categories/#services"
+  status  = 301
+  force   = true
+
+[[redirects]]
+  from    = "/hardware"
+  to      = "/categories/#hardware"
+  status  = 301
+  force   = true
+
+[[redirects]]
   from    = "/github"
   to      = "https://github.com/nirantak/"
   status  = 301

@@ -47,12 +47,12 @@ layout: compress
                 <div class="post-tags">
                     {% if post %} {% assign tags = post.tags %} {% else %} {% assign tags = page.tags %} {% endif %} Tags: {% for tag in tags
                     %}
-                    <a href="">{{tag | capitalize}}</a>
+                    <a href="#">{{tag | capitalize}}</a>
                     {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
                 </div>
                 <div class="post-author">
                     Author: 
-                    <a href="{{site.data.authors[page.author].web}}" target="_blank">{{site.data.authors[page.author].name}}</a>
+                    <a href="https://twitter.com/{{site.data.authors[page.author].twitter}}" target="_blank">{{site.data.authors[page.author].name}}</a>
                 </div>
                 <p>{{content}}</p>
             </section>
