@@ -25,6 +25,9 @@ div#anim1 {
 	width: 100px;
 	height: 100px;
 	background: #ecff00;
+	background-image: url("1.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	position: relative;
 	animation: jump 5s infinite;
 }
@@ -42,7 +45,8 @@ nav ul li a:hover {
 		top: 0%;
 		left: 80%;
 		border-radius: 75px;
-		background: #6331f4;
+		background-color: #6331f4;
+		background-image: url("3.jpeg");
 	}
 	100% {
 		top: 0%;
@@ -105,11 +109,21 @@ div.transf-img {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-div#transf-img1 { background-image: url("1.jpeg"); }
-div#transf-img2 { background-image: url("2.jpeg"); }
-div#transf-img3 { background-image: url("3.jpeg"); }
-div#transf-img4 { background-image: url("4.jpeg"); }
-div#transf-img5 { background-image: url("6.jpeg"); }
+div#transf-img1 {
+	background-image: url("1.jpeg");
+}
+div#transf-img2 {
+	background-image: url("2.jpeg");
+}
+div#transf-img3 {
+	background-image: url("3.jpeg");
+}
+div#transf-img4 {
+	background-image: url("4.jpeg");
+}
+div#transf-img5 {
+	background-image: url("6.jpeg");
+}
 
 div#transf-img1:hover {
 	-ms-transform: rotate(45deg);
@@ -324,7 +338,6 @@ div#d3transf3:hover {
 	background-image: url("1.jpeg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	
 }
 #cube .cube-back {
 	background: hsla(60, 100%, 50%, 0.7);
@@ -667,6 +680,62 @@ div#d3transf3:hover {
 	transition: opacity 1s, transform 1s;
 }
 
+/* Image Carousel 2 */
+@-webkit-keyframes spinner {
+	from {
+		-webkit-transform: rotateY(0deg);
+	}
+	to {
+		-webkit-transform: rotateY(-360deg);
+	}
+}
+@keyframes spinner {
+	from {
+		-moz-transform: rotateY(0deg);
+		-ms-transform: rotateY(0deg);
+		transform: rotateY(0deg);
+	}
+	to {
+		-moz-transform: rotateY(-360deg);
+		-ms-transform: rotateY(-360deg);
+		transform: rotateY(-360deg);
+	}
+}
+#stage {
+	margin: 1em auto;
+	-webkit-perspective: 1200px;
+	-moz-perspective: 1200px;
+	-ms-perspective: 1200px;
+	perspective: 1200px;
+}
+#spinner {
+	-webkit-animation-name: spinner;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 6s;
+
+	animation-name: spinner;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-duration: 6s;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+#spinner:hover {
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
+}
+#spinner img {
+	position: absolute;
+	border: 1px solid #ccc;
+	background: rgba(255, 255, 255, 0.8);
+	background-size: cover;
+	box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
 /* Transformation + Animation */
 @keyframes swing {
 	from {
@@ -798,4 +867,53 @@ div#d3transf3:hover {
 		-webkit-transform: translateX(250px);
 		transform: translateX(250px);
 	}
+}
+
+#cubicbez {
+	overflow: hidden;
+	width: 80%;
+	margin: auto;
+}
+#cubicbez span {
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	background-image: url("1.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-animation: cubicbez 3s cubic-bezier(0.1, 0.8, 1, 0.3) infinite;
+	animation: cubicbez 3s cubic-bezier(0.1, 0.8, 1, 0.3) infinite;
+}
+@-webkit-keyframes cubicbez {
+	0% {
+		-webkit-transform: translateX(-200px);
+		transform: translateX(-200px);
+	}
+	75% {
+		-webkit-transform: translateX(80px);
+		transform: translateX(80px);
+	}
+	100% {
+		-webkit-transform: translateX(500px);
+		transform: translateX(500px);
+	}
+}
+@keyframes cubicbez {
+	0% {
+		-webkit-transform: translateX(-200px);
+		transform: translateX(-200px);
+	}
+	75% {
+		-webkit-transform: translateX(80px);
+		transform: translateX(80px);
+	}
+	100% {
+		-webkit-transform: translateX(500px);
+		transform: translateX(500px);
+	}
+}
+
+img {
+	display: block;
+	object-fit: cover;
 }
