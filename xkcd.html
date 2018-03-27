@@ -80,6 +80,7 @@ permalink: /xkcd
 	<script>
 		var latest = 1;
 		var counter = 0;
+		var blacklist = [1967];
 		$(function () {
 			$.ajax({
 				url: "https://dynamic.xkcd.com/api-0/jsonp/comic/",
@@ -111,20 +112,22 @@ permalink: /xkcd
 			})
 			.done(function (res) {
 				latest = res.num;
-				$("#xkcd").append(`
-				<div class="card">
-					<img class="card-img-top" src="${res.img}" alt="${res.title}">
-					<div class="card-body">
-						<h5 class="card-title">${res.title}</h5>
-						<p class="card-text">${res.alt}</p>
-						<a href="https://xkcd.com/${res.num}/" target="_blank" rel="noopener" class="btn btn-primary">xkcd - ${res.num}</a>
-					</div>
-				</div>`);
+				if(blacklist.indexOf(latest) < 0) {
+					$("#xkcd").append(`
+					<div class="card">
+						<img class="card-img-top" src="${res.img}" alt="${res.title}">
+						<div class="card-body">
+							<h5 class="card-title">${res.title}</h5>
+							<p class="card-text">${res.alt}</p>
+							<a href="https://xkcd.com/${res.num}/" target="_blank" rel="noopener" class="btn btn-primary">xkcd - ${res.num}</a>
+						</div>
+					</div>`);
+				}
 				counter++;
 				if ((counter < 5) && (latest > 0)) loadMore();
 			})
 			.fail(function (xhr, status, errorThrown) {
-				$("#xkcd").append("<h5 style='color: #FF3333;'>Sorry! Could not fetch more comics.</h5>");
+				$("#xkcd").append("<h5 class='error' style='color: #FF3333;'>Sorry! Could not fetch more comics.</h5>");
 				console.log("Error: " + errorThrown);
 				console.log("Status: " + status);
 				console.dir(xhr);
