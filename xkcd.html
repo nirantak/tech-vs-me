@@ -2,6 +2,8 @@
 layout: compress
 title: "XKCD AJAX"
 permalink: /xkcd
+sitemap:
+    priority: 0.7
 ---
 
 <!DOCTYPE html>
@@ -13,6 +15,36 @@ permalink: /xkcd
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>XKCD</title>
+	<meta name="description" content="XKCD Comic reader powered by AJAX">
+	<meta name="keywords" content="xkcd, ajax, comic" />
+	<meta name="author" content="Nirantak Raghav" />
+	
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:description" content="XKCD Comic reader powered by AJAX">
+	<meta name="twitter:image:src" content="{{ "/images/tech-versus-me.png" | absolute_url }}">
+	<meta name="twitter:site" content="@{{ site.twitter }}">
+	<meta name="twitter:creator" content="@{{ site.twitter }}">
+	<meta name="twitter:url" content="{{ site.url }}/">
+	<meta name="twitter:title" content="{{ page.title }}">
+	
+	<meta property="og:title" content="{{ page.title }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{{ page.url | absolute_url }}" />
+	<meta property="og:image" content="{{ "/images/tech-versus-me.png" | absolute_url }}">
+	<meta property="og:description" content="XKCD Comic reader powered by AJAX" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:locale:alternate" content="en_IN" />
+	<meta property="og:site_name" content="Tech Versus Me" />
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/icon/apple-touch-icon.png" | absolute_url }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/icon/favicon-32x32.png" | absolute_url }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/icon/favicon-16x16.png" | absolute_url }}">
+	<link rel="manifest" href="{{ "/manifest.json" | absolute_url }}">
+	<link rel="mask-icon" href="{{ "/assets/icon/safari-pinned-tab.svg" | absolute_url }}" color="#5bbad5">
+	<link rel="shortcut icon" href="{{ "/assets/icon/favicon.ico" | absolute_url }}">
+	<meta name="msapplication-config" content="{{ "/assets/icon/browserconfig.xml" | absolute_url }}">
+	<meta name="theme-color" content="#464b50">
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	 crossorigin="anonymous">
 	<style>
@@ -35,7 +67,7 @@ permalink: /xkcd
 </head>
 
 <body>
-
+	{% include tracking.html %}
 	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 		<a class="navbar-brand" href="#">XKCD</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
