@@ -41,3 +41,9 @@
   to      = "https://twitter.com/NirantakRaghav"
   status  = 301
   force   = true
+
+[[redirects]]
+  from    = "/xkcd"
+  to      = "https://nirantak.com/xkcd"
+  status  = 301
+  force   = true
