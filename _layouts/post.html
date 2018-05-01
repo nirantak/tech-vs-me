@@ -36,10 +36,10 @@ layout: compress
                     <h1>{{page.title}}</h1>
                     <p>{{page.excerpt}}</p>
                 </header>
-                <div class="image main"><img src="{{page.image}}" alt=""></div>
+                <div class="image main"><img src="{{page.image}}" alt="{{page.title}}" /></div>
                 <div class="post-categories">
                     {% if post %} {% assign categories = post.categories %} {% else %} {% assign categories = page.categories %} {% endif %}
-                    Category: 
+                    Category:
                     {% for category in categories %}
                     <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category | capitalize}}</a>
                     {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
@@ -51,7 +51,7 @@ layout: compress
                     {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
                 </div>
                 <div class="post-author">
-                    Author: 
+                    Author:
                     <a href="https://twitter.com/{{site.data.authors[page.author].twitter}}" target="_blank">{{site.data.authors[page.author].name}}</a>
                 </div>
                 <p>{{content}}</p>

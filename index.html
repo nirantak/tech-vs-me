@@ -52,7 +52,7 @@ sitemap:
                     <h2><a href="#">Tech Versus Me</a></h2>
                     <p>We provide detailed comparisons between tech products and services, that enable our readers to make informed choices.</p>
                 </header>
-                <a href="#" class="image main"><img src="{{ "/images/pexels-photo-325153.jpeg" | absolute_url }}" alt="Gadgets" /></a>
+                <a href="#" class="image main"><img src="{{ "/images/pexels-photo-325153.jpeg" | absolute_url }}" alt="Introduction" /></a>
                 <p>You can find various comparisons here from products like earphones or laptops to services like web hosting or domain registrars.
                     <br />If you don't find what you're looking for, you can request comparisons and we will write it up as soon as possible!</p>
             </article>
@@ -64,7 +64,7 @@ sitemap:
                         <span class="date">{{ post.date | date_to_string }}</span>
                         <h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</h2>
                     </header>
-                    <a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
+                    <a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="{{ post.title }}" /></a>
                     <p>{{ post.excerpt }}</p>
                     <ul class="actions">
                         <li><a href="{{ post.url | absolute_url }}" class="button">Read</a></li>

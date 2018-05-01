@@ -7,7 +7,6 @@ encoding: utf-8
 timezone: Asia/Kolkata
 url: "https://techversus.me"
 baseurl: ""
-api_url: "https://api.techversus.me"
 
 defaults:
 - scope:
