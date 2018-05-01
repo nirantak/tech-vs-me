@@ -1,7 +1,7 @@
 // Service Worker
 
-var CACHE_NAME = 'offline-v26';
-var OFFLINE_URL = '/offline.html';
+var CACHE_NAME = "offline-v30";
+var OFFLINE_URL = "/offline.html";
 
 var CACHE_FILES = [
 	"/",
@@ -43,44 +43,51 @@ var CACHE_FILES = [
 	"https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900"
 ];
 
-self.addEventListener('install', function (e) {
-	console.log('[SW] Installing...');
+self.addEventListener("install", function(e) {
+	console.log("[SW] Installing...");
 	e.waitUntil(
-		caches.open(CACHE_NAME).then(function (cache) {
-			console.log('[SW] Caching app...');
-			return cache.addAll(CACHE_FILES);
-		})
+		caches
+			.open(CACHE_NAME)
+			.then(function(cache) {
+				console.log("[SW] Caching app...");
+				return cache.addAll(CACHE_FILES);
+			})
+			.then(self.skipWaiting())
 	);
 });
 
-self.addEventListener('activate', function (e) {
-	console.log('[SW] Activating...');
+self.addEventListener("activate", function(e) {
+	console.log("[SW] Activating...");
 	e.waitUntil(
-		caches.keys().then(function (keyList) {
-			return Promise.all(keyList.map(function (key) {
-				if (key !== CACHE_NAME) {
-					console.log('[SW] Removing old cache... ', key);
-					return caches.delete(key);
-				}
-			}));
+		caches.keys().then(function(keyList) {
+			return Promise.all(
+				keyList.map(function(key) {
+					if (key !== CACHE_NAME) {
+						console.log("[SW] Removing old cache... ", key);
+						return caches.delete(key);
+					}
+				})
+			);
 		})
 	);
 	return self.clients.claim();
 });
 
-self.addEventListener('fetch', function (e) {
+self.addEventListener("fetch", function(e) {
 	e.respondWith(
-		caches.match(e.request).then(function (response) {
-			return response || fetch(e.request).catch(function (error) {
-				console.log('[SW] Failed to fetch ', e.request, '; returning offline page instead. ', error);
-				return caches.match(OFFLINE_URL);
-			});
+		caches.match(e.request).then(function(response) {
+			return (
+				response ||
+				fetch(e.request).catch(function(error) {
+					console.log(
+						"[SW] Failed to fetch ",
+						e.request,
+						"; returning offline page instead. ",
+						error
+					);
+					return caches.match(OFFLINE_URL);
+				})
+			);
 		})
 	);
-});
-
-self.addEventListener("message", function(event) {
-	if (event.data === "skipWaiting") {
-		return self.skipWaiting();
-	}
 });
