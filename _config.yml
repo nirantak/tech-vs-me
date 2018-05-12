@@ -1,8 +1,8 @@
 # Site
-title:              Tech Versus Me
-bio:                'We provide detailed comparisons between tech products and services, that enable our readers to make informed choices.'
-description:        "We provide detailed comparisons between tech products and services, that enable our readers to make informed choices."
-locale:             en_US
+title: Tech Versus Me
+bio: 'We provide detailed comparisons between tech products and services, that enable our readers to make informed choices.'
+description: "We provide detailed comparisons between tech products and services, that enable our readers to make informed choices."
+locale: en_US
 encoding: utf-8
 timezone: Asia/Kolkata
 url: "https://techversus.me"

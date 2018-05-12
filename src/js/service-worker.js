@@ -1,6 +1,6 @@
 // Service Worker
 
-var CACHE_NAME = "offline-v30";
+var CACHE_NAME = "offline-v31";
 var OFFLINE_URL = "/offline.html";
 
 var CACHE_FILES = [
@@ -26,6 +26,8 @@ var CACHE_FILES = [
 	"/images/overlay.png",
 	"/images/cb-close.png",
 	"/images/pexels-photo-325153.jpeg",
+	"/assets/icon/android-chrome-192x192.png",
+	"/assets/icon/android-chrome-512x512.png",
 	"/assets/css/font-awesome.min.css",
 	"/assets/fonts/fontawesome-webfont.eot",
 	"/assets/fonts/fontawesome-webfont.eot?v=4.7.0",
