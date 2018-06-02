@@ -52,14 +52,14 @@ layout: compress
                         {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
                     </div>
                     <div class="post-author">
-                        Author: 
-                        <a href="https://twitter.com/{{site.data.authors[page.author].twitter}}" target="_blank">{{site.data.authors[page.author].name}}</a>
+                        Author:
+                        <a href="https://twitter.com/{{site.data.authors[post.author].twitter}}" target="_blank" rel="noopener">{{site.data.authors[post.author].name}}</a>
                     </div>
                     <ul class="actions">
                         <li><a href="{{ post.url | absolute_url }}" class="button">Read</a></li>
                     </ul>
                 </article>
-                 {% endfor %}
+                {% endfor %}
             </section>
         </div>
         <!-- Footer -->

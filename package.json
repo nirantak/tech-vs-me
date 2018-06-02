@@ -25,8 +25,8 @@
   },
   "homepage": "https://techversus.me",
   "engines": {
-    "node": ">=10.1.0",
-    "npm": "~6.0.1"
+    "node": ">=10.3.0",
+    "npm": "~6.1.0"
   },
   "devDependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
@@ -34,7 +34,7 @@
     "gulp-clean-css": "*",
     "gulp-concat": "*",
     "gulp-imagemin": "*",
-    "gulp-rename": "*",
+    "gulp-rename": "^1.2.3",
     "gulp-uglify": "*"
   },
   "dependencies": {}
