@@ -1,6 +1,6 @@
 {
   "name": "tech-vs-me",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Tech-vs-Me provides detailed comparisons between tech products and services, that enable our readers to make informed choices.",
   "main": "index.html",
   "scripts": {
@@ -23,19 +23,19 @@
   "bugs": {
     "url": "https://github.com/nirantak/tech-vs-me/issues"
   },
-  "homepage": "https://techversus.me",
+  "homepage": "https://tvm.nirantak.com",
   "engines": {
-    "node": ">=10.3.0",
-    "npm": "~6.1.0"
+    "node": "10.9.0",
+    "npm": "6.4.0"
   },
   "devDependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^5.0.0",
-    "gulp-clean-css": "*",
+    "gulp-clean-css": "^3.10.0",
     "gulp-concat": "*",
     "gulp-imagemin": "*",
-    "gulp-rename": "^1.2.3",
-    "gulp-uglify": "*"
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.1"
   },
   "dependencies": {}
 }

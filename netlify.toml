@@ -12,11 +12,10 @@
     X-XSS-Protection        = "1; mode=block"
 
 [[redirects]]
-  from    = "/api/*"
-  to      = "https://api.techversus.me/:splat"
-  status  = 200
+  from    = "https://techversusme.netlify.com/*"
+  to      = "https://tvm.nirantak.com/:splat"
+  status  = 301
   force   = true
-  headers = {Accept = "application/json; indent=4, application/json", Content-Type = "application/json"}
 
 [[redirects]]
   from    = "/services"

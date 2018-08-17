@@ -17,7 +17,7 @@ title : Sitemap
     </url>
     {% endfor %}
     {% for page in site.pages %}
-        {% if page.ait != true %}
+        {% if page.sitemap != false %}
         <url>
             <loc>{{ site.url }}{{ page.url }}</loc>
             {% if page.sitemap.lastmod == null %} <lastmod>2017-11-10T00:20:35+00:00</lastmod>

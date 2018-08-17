@@ -1,4 +1,5 @@
 User-agent: *
-Disallow: /ait/
+Disallow: /privacy/
+Disallow: /privacy.html
 
-Sitemap: https://techversus.me/sitemap.xml
+Sitemap: https://tvm.nirantak.com/sitemap.xml

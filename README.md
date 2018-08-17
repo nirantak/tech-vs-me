@@ -1,7 +1,7 @@
 # Tech Versus Me
 
 > *Progressive Web App built using Jekyll*  
-> [techversus.me](https://techversus.me/)
+> [tvm.nirantak.com](https://tvm.nirantak.com/)
 
 ### Objective
 
