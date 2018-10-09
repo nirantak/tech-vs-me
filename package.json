@@ -1,11 +1,13 @@
 {
   "name": "tech-vs-me",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Tech-vs-Me provides detailed comparisons between tech products and services, that enable our readers to make informed choices.",
   "main": "index.html",
   "scripts": {
-    "start": "bundle exec jekyll serve",
-    "build": "gulp"
+    "start": "bundle exec jekyll serve --livereload",
+    "build": "bundle exec jekyll build",
+    "update": "npm update && bundle update",
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",
@@ -25,8 +27,8 @@
   },
   "homepage": "https://tvm.nirantak.com",
   "engines": {
-    "node": "10.9.0",
-    "npm": "6.4.0"
+    "node": "10.11.0",
+    "npm": "6.4.1"
   },
   "devDependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
