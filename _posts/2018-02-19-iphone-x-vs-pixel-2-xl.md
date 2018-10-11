@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "iPhone X vs Pixel 2 XL"
-date: 2018-02-19 10:00:00 +05:30
+date: 2018-02-19T10:00+05:30
 last_modified_at: 2018-02-19
 description: "Holy phone wars - Apple's iPhone X or Google's Pixel 2 XL"
 keywords: iphone, iphone x, apple, google, pixel, pixel 2 xl

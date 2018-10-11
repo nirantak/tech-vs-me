@@ -27,7 +27,7 @@
   },
   "homepage": "https://tvm.nirantak.com",
   "engines": {
-    "node": "10.11.0",
+    "node": "10.12.0",
     "npm": "6.4.1"
   },
   "devDependencies": {

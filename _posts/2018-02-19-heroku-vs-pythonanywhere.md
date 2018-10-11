@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Heroku vs Pythonanywhere"
-date: 2018-02-19 21:30:00 +05:30
+date: 2018-02-19T21:30+05:30
 last_modified_at: 2018-02-19
 description: "Compare Heroku with Pythonanywhere for Python hosting"
 keywords: heroku, pythonanywhere, python, hosting
