@@ -10,8 +10,7 @@
     "gulp": "gulp"
   },
   "pre-commit": [
-    "build",
-    "gulp"
+    "build"
   ],
   "repository": {
     "type": "git",
