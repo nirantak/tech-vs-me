@@ -1,24 +1,24 @@
 {
-	"lang": "en",
-	"dir": "ltr",
-	"name": "Tech Versus Me",
-	"short_name": "Tech vs Me",
-	"description": "We provide detailed comparisons between tech products and services, that enable our readers to make informed choices.",
-	"icons": [
-		{
-			"src": "/assets/icon/android-chrome-192x192.png",
-			"type": "image/png",
-			"sizes": "192x192"
-		},
-		{
-			"src": "/assets/icon/android-chrome-512x512.png",
-			"type": "image/png",
-			"sizes": "512x512"
-		}
-	],
-	"theme_color": "#464b50",
-	"background_color": "#ffffff",
-	"display": "standalone",
-	"start_url": "/index.html?utm_source=pwa",
-	"scope": "/"
+  "lang": "en",
+  "dir": "ltr",
+  "name": "Tech Versus Me",
+  "short_name": "Tech vs Me",
+  "description": "We provide detailed comparisons between tech products and services, that enable our readers to make informed choices.",
+  "icons": [
+    {
+      "src": "/assets/icon/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icon/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "theme_color": "#464b50",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/index.html?utm_source=pwa",
+  "scope": "/"
 }

@@ -11,6 +11,11 @@
     X-Content-Type-Options  = "nosniff"
     X-XSS-Protection        = "1; mode=block"
 
+[[headers]]
+  for = "/service-worker.js"
+  [headers.values]
+    cache-control = "max-age=0,no-cache,no-store,must-revalidate"
+
 [[redirects]]
   from    = "https://techversusme.netlify.com/*"
   to      = "https://tvm.nirantak.com/:splat"
@@ -26,23 +31,5 @@
 [[redirects]]
   from    = "/hardware"
   to      = "/categories/#hardware"
-  status  = 301
-  force   = true
-
-[[redirects]]
-  from    = "/github"
-  to      = "https://github.com/nirantak/"
-  status  = 301
-  force   = true
-
-[[redirects]]
-  from    = "/twitter"
-  to      = "https://twitter.com/NirantakRaghav"
-  status  = 301
-  force   = true
-
-[[redirects]]
-  from    = "/xkcd"
-  to      = "https://nirantak.com/xkcd"
   status  = 301
   force   = true
