@@ -30,8 +30,8 @@
   },
   "homepage": "https://tvm.nirantak.com",
   "engines": {
-    "node": "11.6.0",
-    "npm": "6.5.0"
+    "node": "11.7.0",
+    "npm": "6.6.0"
   },
   "devDependencies": {
     "gulp": "^4.0.0",

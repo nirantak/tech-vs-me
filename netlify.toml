@@ -1,35 +1,35 @@
 # Netlify Deploy Contexts
 
 [build]
-  publish = "_site"
-  command = "bundle exec jekyll build"
+    publish = "_site"
+    command = "bundle exec jekyll build"
 
 [[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options         = "DENY"
-    X-Content-Type-Options  = "nosniff"
-    X-XSS-Protection        = "1; mode=block"
+    for = "/*"
+    [headers.values]
+        X-Frame-Options         = "DENY"
+        X-Content-Type-Options  = "nosniff"
+        X-XSS-Protection        = "1; mode=block"
 
 [[headers]]
-  for = "/service-worker.js"
-  [headers.values]
-    cache-control = "max-age=0,no-cache,no-store,must-revalidate"
+    for = "/service-worker.js"
+    [headers.values]
+        cache-control = "max-age=0,no-cache,no-store,must-revalidate"
 
 [[redirects]]
-  from    = "https://techversusme.netlify.com/*"
-  to      = "https://tvm.nirantak.com/:splat"
-  status  = 301
-  force   = true
+    from    = "https://techversusme.netlify.com/*"
+    to      = "https://tvm.nirantak.com/:splat"
+    status  = 301
+    force   = true
 
 [[redirects]]
-  from    = "/services"
-  to      = "/categories/#services"
-  status  = 301
-  force   = true
+    from    = "/services"
+    to      = "/categories/#services"
+    status  = 301
+    force   = true
 
 [[redirects]]
-  from    = "/hardware"
-  to      = "/categories/#hardware"
-  status  = 301
-  force   = true
+    from    = "/hardware"
+    to      = "/categories/#hardware"
+    status  = 301
+    force   = true
