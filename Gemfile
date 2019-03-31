@@ -1,5 +1,5 @@
 source "https://rubygems.org" do
-    ruby "~> 2.6.0"
+    ruby "~> 2.6.2"
     gem "jekyll"
     gem "jekyll-sitemap"
     gem "jekyll-gist"
