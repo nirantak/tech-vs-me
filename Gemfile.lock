@@ -18,7 +18,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     ffi (1.10.0)
     forwardable-extended (2.6.0)
-    html-pipeline (2.10.0)
+    html-pipeline (2.11.0)
       activesupport (>= 2)
       nokogiri (>= 1.4)
     http_parser.rb (0.6.0)
@@ -74,7 +74,7 @@ GEM
     rouge (3.3.0)
     ruby_dep (1.5.0)
     safe_yaml (1.0.5)
-    sass (3.7.3)
+    sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -98,7 +98,7 @@ DEPENDENCIES
   jekyll-sitemap!
 
 RUBY VERSION
-   ruby 2.6.2p47
+   ruby 2.6.3p62
 
 BUNDLED WITH
    1.17.3
